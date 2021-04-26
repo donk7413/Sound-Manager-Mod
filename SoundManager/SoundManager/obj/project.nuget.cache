@@ -1,0 +1,28 @@
+{
+  "version": 2,
+  "dgSpecHash": "9qWqCotOytEnfLCGNq/72JkP64/egFvzlFpeHZx+6nZKgIgpPW3lV2t2eFMXZynx+TMc7I7x+3D60ZURuJ4gcA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\rchevallier\\source\\repos\\SoundManager\\SoundManager\\SoundManager.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\rchevallier\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\5.0.0\\microsoft.bcl.asyncinterfaces.5.0.0.nupkg.sha512",
+    "C:\\Users\\rchevallier\\.nuget\\packages\\microsoft.netcore.platforms\\5.0.0\\microsoft.netcore.platforms.5.0.0.nupkg.sha512",
+    "C:\\Users\\rchevallier\\.nuget\\packages\\microsoft.visualstudio.threading\\16.9.60\\microsoft.visualstudio.threading.16.9.60.nupkg.sha512",
+    "C:\\Users\\rchevallier\\.nuget\\packages\\microsoft.visualstudio.threading.analyzers\\16.9.60\\microsoft.visualstudio.threading.analyzers.16.9.60.nupkg.sha512",
+    "C:\\Users\\rchevallier\\.nuget\\packages\\microsoft.visualstudio.validation\\16.8.33\\microsoft.visualstudio.validation.16.8.33.nupkg.sha512",
+    "C:\\Users\\rchevallier\\.nuget\\packages\\microsoft.win32.registry\\5.0.0\\microsoft.win32.registry.5.0.0.nupkg.sha512",
+    "C:\\Users\\rchevallier\\.nuget\\packages\\microsoft.win32.systemevents\\5.0.0\\microsoft.win32.systemevents.5.0.0.nupkg.sha512",
+    "C:\\Users\\rchevallier\\.nuget\\packages\\naudio\\2.0.0\\naudio.2.0.0.nupkg.sha512",
+    "C:\\Users\\rchevallier\\.nuget\\packages\\naudio.asio\\2.0.0\\naudio.asio.2.0.0.nupkg.sha512",
+    "C:\\Users\\rchevallier\\.nuget\\packages\\naudio.core\\2.0.0\\naudio.core.2.0.0.nupkg.sha512",
+    "C:\\Users\\rchevallier\\.nuget\\packages\\naudio.midi\\2.0.0\\naudio.midi.2.0.0.nupkg.sha512",
+    "C:\\Users\\rchevallier\\.nuget\\packages\\naudio.wasapi\\2.0.0\\naudio.wasapi.2.0.0.nupkg.sha512",
+    "C:\\Users\\rchevallier\\.nuget\\packages\\naudio.winforms\\2.0.0\\naudio.winforms.2.0.0.nupkg.sha512",
+    "C:\\Users\\rchevallier\\.nuget\\packages\\naudio.winmm\\2.0.0\\naudio.winmm.2.0.0.nupkg.sha512",
+    "C:\\Users\\rchevallier\\.nuget\\packages\\system.drawing.common\\5.0.0\\system.drawing.common.5.0.0.nupkg.sha512",
+    "C:\\Users\\rchevallier\\.nuget\\packages\\system.security.accesscontrol\\5.0.0\\system.security.accesscontrol.5.0.0.nupkg.sha512",
+    "C:\\Users\\rchevallier\\.nuget\\packages\\system.security.principal.windows\\5.0.0\\system.security.principal.windows.5.0.0.nupkg.sha512",
+    "C:\\Users\\rchevallier\\.nuget\\packages\\system.threading.tasks.extensions\\4.5.4\\system.threading.tasks.extensions.4.5.4.nupkg.sha512",
+    "C:\\Users\\rchevallier\\.nuget\\packages\\system.windows.extensions\\5.0.0\\system.windows.extensions.5.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
