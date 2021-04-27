@@ -28,7 +28,7 @@ BOOL APIENTRY DllMain(HMODULE module, DWORD reasonForCall, LPVOID) {
             wchar_t exePathBuf[MAX_PATH] { 0 };
             GetModuleFileName(GetModuleHandle(nullptr), exePathBuf, std::size(exePathBuf));
             std::filesystem::path exePath = exePathBuf;
-            rootDir = exePath.parent_path() / "plugins/cyber_engine_tweaks/mods" / MODNAME;
+            rootDir = exePath.parent_path() / "plugins\cyber_engine_tweaks\mods" / MODNAME;
 
             // Quit if companion was not found
             if (!std::filesystem::exists(rootDir / "init.lua")) {
