@@ -15,6 +15,11 @@ namespace SoundManager
         static void Main(string[] args)
         {
             Console.WriteLine("Starting Listen for a sound!");
+            Console.WriteLine(System.IO.Directory.GetCurrentDirectory());
+            System.IO.DirectoryInfo directoryInfo =
+                    System.IO.Directory.GetParent(System.IO.Directory.GetCurrentDirectory());
+
+            System.Console.WriteLine(directoryInfo.FullName);
             bool test = true;
 
             string music = "";
