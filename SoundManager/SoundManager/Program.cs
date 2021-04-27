@@ -114,7 +114,7 @@ namespace SoundManager
                     {
                         outputsound = new WaveOutEvent();
                         //outputsound.Volume = (float)1;
-                        using (var audioFile = new AudioFileReader(@"..\json\sounds\" + sound))
+                        using (var audioFile = new AudioFileReader(@"..\..\"+sound))
                         using (var outputDevice = outputsound)
                         {
                             Console.WriteLine("Playing sounds: " + sound);
@@ -165,7 +165,7 @@ namespace SoundManager
                     {
                         outputenv = new WaveOutEvent();
                         //outputenv.Volume = (float)0.1;
-                        using (var audioFile = new AudioFileReader(@"..\json\sounds\" + sound))
+                        using (var audioFile = new AudioFileReader(@"..\..\"+sound))
                         using (var outputDevice = outputenv)
                         {
                             Console.WriteLine("Playing sounds: " + sound);
@@ -217,7 +217,7 @@ namespace SoundManager
                     {
                         outputmusic = new WaveOutEvent();
                         //outputmusic.Volume = (float)0.5;
-                        using (var audioFile = new AudioFileReader(@"..\json\sounds\" + music))
+                        using (var audioFile = new AudioFileReader(@"..\..\" + music))
                         using (var outputDevice = outputmusic)
                         {
                             Console.WriteLine("Playing music: " + music);

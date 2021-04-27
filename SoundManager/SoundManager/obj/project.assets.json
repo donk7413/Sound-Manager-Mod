@@ -922,26 +922,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\rchevallier\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\romai\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\rchevallier\\source\\repos\\SoundManager\\SoundManager\\SoundManager.csproj",
+      "projectUniqueName": "D:\\Github\\Sound-Manager-Mod\\SoundManager\\SoundManager\\SoundManager.csproj",
       "projectName": "SoundManager",
-      "projectPath": "C:\\Users\\rchevallier\\source\\repos\\SoundManager\\SoundManager\\SoundManager.csproj",
-      "packagesPath": "C:\\Users\\rchevallier\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\rchevallier\\source\\repos\\SoundManager\\SoundManager\\obj\\",
+      "projectPath": "D:\\Github\\Sound-Manager-Mod\\SoundManager\\SoundManager\\SoundManager.csproj",
+      "packagesPath": "C:\\Users\\romai\\.nuget\\packages\\",
+      "outputPath": "D:\\Github\\Sound-Manager-Mod\\SoundManager\\SoundManager\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-      ],
       "configFilePaths": [
-        "C:\\Users\\rchevallier\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\romai\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -949,7 +942,6 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "\\\\SRVSVN.e-metix.fr\\NugetServer": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -994,9 +986,12 @@
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
+          },
+          "Microsoft.WindowsDesktop.App.WindowsForms": {
+            "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
       }
     }
   }
