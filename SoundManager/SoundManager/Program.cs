@@ -127,9 +127,75 @@ namespace SoundManager
 
                             outputDevice.Play();
 
-                            while (outputDevice.PlaybackState == PlaybackState.Playing)
+
+                            bool isPlaying = true;
+                            string stopfile = @"..\stopsound.txt";
+                            string pausefile = @"..\pausesound.txt";
+                            while (isPlaying)
                             {
-                                Thread.Sleep(1000);
+                                while (outputDevice.PlaybackState == PlaybackState.Playing)
+                                {
+
+
+
+
+
+                                    if (File.Exists(stopfile) == true)
+                                    {
+                                        outputDevice.Stop();
+                                        File.Delete(stopfile);
+                                    }
+                                    else if (File.Exists(pausefile) == true)
+                                    {
+                                        outputDevice.Pause();
+                                        Thread.Sleep(1000);
+                                    }
+
+                                    else
+                                    {
+
+                                        Thread.Sleep(1000);
+                                    }
+
+
+
+                                }
+
+                                while (outputDevice.PlaybackState == PlaybackState.Paused)
+                                {
+
+
+
+
+
+
+
+                                    if (File.Exists(stopfile) == true)
+                                    {
+                                        outputDevice.Stop();
+                                        File.Delete(stopfile);
+                                    }
+                                    else if (File.Exists(pausefile) == true)
+                                    {
+
+                                        Thread.Sleep(1000);
+                                    }
+                                    else
+                                    {
+                                        outputDevice.Play();
+                                        Thread.Sleep(1000);
+                                    }
+
+
+
+
+                                }
+
+                                if (outputDevice.PlaybackState == PlaybackState.Stopped)
+                                {
+                                    isPlaying = false;
+                                }
+
                             }
                             Console.WriteLine("sounds played, waiting for another sound");
                             new FileStream(@"..\sound.txt", FileMode.Truncate).Close();
@@ -146,7 +212,7 @@ namespace SoundManager
                 }
                 catch
                 {
-                    Console.WriteLine("waiting for a file");
+                    //Console.WriteLine("waiting for a file");
                 }
             }
             return "";
@@ -175,16 +241,84 @@ namespace SoundManager
                         {
                             Console.WriteLine("Playing sounds: " + sound);
 
-
+                            
                             outputDevice.Init(audioFile);
                             outputDevice.Play();
 
-                            while (outputDevice.PlaybackState == PlaybackState.Playing)
+                            bool isPlaying = true;
+                            string stopfile = @"..\stopenv.txt";
+                            string pausefile = @"..\pauseenv.txt";
+                            while (isPlaying)
                             {
-                                Thread.Sleep(1000);
+                                while (outputDevice.PlaybackState == PlaybackState.Playing)
+                                {
+                                    
+
+
+
+
+                                    if (File.Exists(stopfile) == true)
+                                    {
+                                        outputDevice.Stop();
+                                        File.Delete(stopfile);
+                                    }
+                                    else if (File.Exists(pausefile) == true)
+                                    {
+                                        outputDevice.Pause();
+                                        Thread.Sleep(1000);
+                                    }
+
+                                    else
+                                    {
+
+                                        Thread.Sleep(1000);
+                                    }
+
+
+
+                                }
+
+                                while (outputDevice.PlaybackState == PlaybackState.Paused)
+                                {
+                                   
+
+
+
+
+
+
+                                    if (File.Exists(stopfile) == true)
+                                    {
+                                        outputDevice.Stop();
+                                        File.Delete(stopfile);
+                                    }
+                                    else if (File.Exists(pausefile) == true)
+                                    {
+
+                                        Thread.Sleep(1000);
+                                    }
+                                    else
+                                    {
+                                        outputDevice.Play();
+                                        Thread.Sleep(1000);
+                                    }
+
+
+
+
+                                }
+
+                                if (outputDevice.PlaybackState == PlaybackState.Stopped)
+                                {
+                                    isPlaying = false;
+                                }
+
                             }
+
+
                             Console.WriteLine("env played, waiting for another env");
                             new FileStream(@"..\env.txt", FileMode.Truncate).Close();
+
 
                         }
 
@@ -198,7 +332,7 @@ namespace SoundManager
                 }
                 catch
                 {
-                    Console.WriteLine("waiting for a file");
+                   // Console.WriteLine("waiting for a file");
                 }
             }
             return "";
@@ -229,10 +363,79 @@ namespace SoundManager
                             outputDevice.Init(audioFile);
                             //outputDevice.Volume = (float)1;
                             outputDevice.Play();
-                            while (outputDevice.PlaybackState == PlaybackState.Playing)
+                            string stopfile = @"..\stopmusic.txt";
+                            string pausefile = @"..\pausemusic.txt";
+
+                            bool isPlaying = true;
+                            while (isPlaying)
                             {
-                                Thread.Sleep(1000);
+                                while (outputDevice.PlaybackState == PlaybackState.Playing)
+                                {
+                                 
+
+
+
+
+
+
+                                    if (File.Exists(stopfile) == true)
+                                    {
+                                        outputDevice.Stop();
+                                        File.Delete(stopfile);
+                                    }
+                                    else if (File.Exists(pausefile) == true)
+                                    {
+                                        outputDevice.Pause();
+                                        Thread.Sleep(1000);
+                                    }
+
+                                    else
+                                    {
+
+                                        Thread.Sleep(1000);
+                                    }
+
+
+
+                                }
+
+                                while (outputDevice.PlaybackState == PlaybackState.Paused)
+                                {
+                                  
+
+
+
+
+
+                                    if (File.Exists(stopfile) == true)
+                                    {
+                                        outputDevice.Stop();
+                                        File.Delete(stopfile);
+                                    }
+                                    else if (File.Exists(pausefile) == true)
+                                    {
+
+                                        Thread.Sleep(1000);
+                                    }
+                                    else
+                                    {
+                                        outputDevice.Play();
+                                        Thread.Sleep(1000);
+                                    }
+
+
+
+
+                                }
+
+                                if (outputDevice.PlaybackState == PlaybackState.Stopped)
+                                {
+                                    isPlaying = false;
+                                }
+
                             }
+
+
                             Console.WriteLine("sounds music, waiting for another music");
                             new FileStream(@"..\music.txt", FileMode.Truncate).Close();
                         }
@@ -247,7 +450,7 @@ namespace SoundManager
                 }
                 catch
                 {
-                    Console.WriteLine("waiting for a file");
+                   // Console.WriteLine("waiting for a file");
                 }
 
             }
