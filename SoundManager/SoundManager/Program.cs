@@ -2,6 +2,7 @@
 using NAudio.Wave;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Media;
@@ -62,7 +63,18 @@ namespace SoundManager
 
                 //ExecuteParallel(() => multi.playSound(), () => multi.playMusic());
 
-
+                
+                if (Process.GetProcessesByName("Cyberpunk2077").Length > 0)
+                {
+                   
+                }
+                else
+                {
+                    new FileStream(@"..\music.txt", FileMode.Truncate).Close();
+                    new FileStream(@"..\env.txt", FileMode.Truncate).Close();
+                    new FileStream(@"..\sound.txt", FileMode.Truncate).Close();
+                    System.Environment.Exit(1);
+                }
 
                 // //SomeMethod(multi);
 
@@ -457,7 +469,28 @@ namespace SoundManager
             return "";
         }
     }
+    public static class ProcessMonitor
+    {
+        public static event EventHandler ProcessClosed;
 
+        public static void MonitorForExit(Process process)
+        {
+            Thread thread = new Thread(() =>
+            {
+                process.WaitForExit();
+                OnProcessClosed(EventArgs.Empty);
+            });
+            thread.Start();
+        }
+
+        private static void OnProcessClosed(EventArgs e)
+        {
+            if (ProcessClosed != null)
+            {
+                ProcessClosed(null, e);
+            }
+        }
+    }
 
 
 }
