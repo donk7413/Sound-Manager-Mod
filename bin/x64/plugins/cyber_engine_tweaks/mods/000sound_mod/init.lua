@@ -31,7 +31,7 @@ function SoundManager.Init()
 end
 
 
-SoundManager.Init()
+
 
 print("Sound Manager v."..SoundManager.Version.." : loaded")
 
