@@ -7,6 +7,8 @@ SoundManager.SfxVolume = -1
 SoundManager.DialogueVolume = -1
 SoundManager.MusicVolume = -1
 SoundManager.CarRadioVolume = -1
+
+registerForEvent("onInit", function()
 local MasterVolume = Game.GetSettingsSystem():GetVar("/audio/volume", "MasterVolume")
 	SoundManager.MasterVolume = MasterVolume:GetValue()
 	
@@ -24,7 +26,7 @@ local MasterVolume = Game.GetSettingsSystem():GetVar("/audio/volume", "MasterVol
 
 
 print("Sound Manager v."..SoundManager.Version.." : loaded")
-
+end)
 function SoundManager.PlaySound(file,path,channel)
 	
 	
