@@ -7,7 +7,30 @@ SoundManager.DialogueVolume = -1
 SoundManager.MusicVolume = -1
 SoundManager.CarRadioVolume = -1
 
+function SoundManager.Init()
+	
+	local MasterVolume = Game.GetSettingsSystem():GetVar("/audio/volume", "MasterVolume")
+	SoundManager.MasterVolume = MasterVolume:GetValue()
+	
+	local SfxVolume = Game.GetSettingsSystem():GetVar("/audio/volume", "SfxVolume")
+	SoundManager.SfxVolume = SfxVolume:GetValue()
+	
+	local DialogueVolume = Game.GetSettingsSystem():GetVar("/audio/volume", "DialogueVolume")
+	SoundManager.DialogueVolume = DialogueVolume:GetValue()
+	
+	local MusicVolume = Game.GetSettingsSystem():GetVar("/audio/volume", "MusicVolume")
+	SoundManager.MusicVolume = MusicVolume:GetValue()
+	
+	local CarRadioVolume = Game.GetSettingsSystem():GetVar("/audio/volume", "CarRadioVolume")
+	SoundManager.CarRadioVolume = CarRadioVolume:GetValue()
+	
+	
+	
+	
+end
 
+
+SoundManager.Init()
 
 
 function SoundManager.PlaySound(file,path,channel)
@@ -15,17 +38,7 @@ function SoundManager.PlaySound(file,path,channel)
 	
 		
 		if(channel == "env") then
-			if(SoundManager.DialogueVolume == -1) then
-			local DialogueVolume = Game.GetSettingsSystem():GetVar("/audio/volume", "DialogueVolume")
-			SoundManager.DialogueVolume = SfxVolume:GetValue()
-			DialogueVolume:SetValue(0)
-			end
 			
-			if(SoundManager.SfxVolume == -1) then
-			local SfxVolume = Game.GetSettingsSystem():GetVar("/audio/volume", "SfxVolume")
-			SoundManager.SfxVolume = SfxVolume:GetValue()
-			SfxVolume:SetValue(0)
-			end
 			
 			
 			
@@ -41,18 +54,16 @@ function SoundManager.PlaySound(file,path,channel)
 		
 		
 		if(channel == "music") then
-			if(SoundManager.MusicVolume == -1) then
+			
 			local MusicVolume = Game.GetSettingsSystem():GetVar("/audio/volume", "MusicVolume")
-			SoundManager.MusicVolume = MusicVolume:GetValue()
 			MusicVolume:SetValue(0)
-			end
 			
 			
-			if(SoundManager.CarRadioVolume == -1) then
+			
+			
 			local CarRadioVolume = Game.GetSettingsSystem():GetVar("/audio/volume", "CarRadioVolume")
-			SoundManager.CarRadioVolume = CarRadioVolume:GetValue()
 			CarRadioVolume:SetValue(0)
-			end
+			
 			
 			io.open("music.txt","w"):close()
 			
@@ -64,23 +75,8 @@ function SoundManager.PlaySound(file,path,channel)
 		end
 		
 		if(channel == "sound") then
-			if(SoundManager.MusicVolume == -1) then
-			local MusicVolume = Game.GetSettingsSystem():GetVar("/audio/volume", "MusicVolume")
-			SoundManager.MusicVolume = MusicVolume:GetValue()
-			MusicVolume:SetValue(0)
-			end
 			
-			if(SoundManager.CarRadioVolume == -1) then
-			local CarRadioVolume = Game.GetSettingsSystem():GetVar("/audio/volume", "CarRadioVolume")
-			SoundManager.CarRadioVolume = CarRadioVolume:GetValue()
-			CarRadioVolume:SetValue(0)
-			end
-			
-			if(SoundManager.SfxVolume == -1) then
-			local SfxVolume = Game.GetSettingsSystem():GetVar("/audio/volume", "SfxVolume")
-			SoundManager.SfxVolume = SfxVolume:GetValue()
-			SfxVolume:SetValue(0)
-			end
+		
 			
 			io.open("sound.txt","w"):close()
 			
@@ -105,15 +101,8 @@ function SoundManager.Pause(channel)
 		
 		if(channel == "env") then
 		
-			if(SoundManager.DialogueVolume ~= -1) then
-			local DialogueVolume = Game.GetSettingsSystem():GetVar("/audio/volume", "DialogueVolume")
-			DialogueVolume:SetValue(SoundManager.DialogueVolume)
-			end
+		
 			
-			if(SoundManager.SfxVolume ~= -1) then
-			local SfxVolume = Game.GetSettingsSystem():GetVar("/audio/volume", "SfxVolume")
-			SfxVolume:SetValue(SoundManager.SfxVolume)
-			end
 			
 			io.open("pauseenv.txt","w"):close()
 			
@@ -123,15 +112,15 @@ function SoundManager.Pause(channel)
 		
 		if(channel == "music") then
 			
-			if(SoundManager.MusicVolume ~= -1) then
+			
 			local MusicVolume = Game.GetSettingsSystem():GetVar("/audio/volume", "MusicVolume")
 			MusicVolume:SetValue(SoundManager.MusicVolume)
-			end
 			
-			if(SoundManager.CarRadioVolume ~= -1) then
+			
+			
 			local CarRadioVolume = Game.GetSettingsSystem():GetVar("/audio/volume", "CarRadioVolume")
 			CarRadioVolume:SetValue(SoundManager.CarRadioVolume)
-			end
+			
 		
 		
 		
@@ -141,20 +130,9 @@ function SoundManager.Pause(channel)
 		
 		if(channel == "sound") then
 			
-			if(SoundManager.MusicVolume ~= -1) then
-			local MusicVolume = Game.GetSettingsSystem():GetVar("/audio/volume", "MusicVolume")
-			MusicVolume:SetValue(SoundManager.MusicVolume)
-			end
 			
-			if(SoundManager.CarRadioVolume ~= -1) then
-			local CarRadioVolume = Game.GetSettingsSystem():GetVar("/audio/volume", "CarRadioVolume")
-			CarRadioVolume:SetValue(SoundManager.CarRadioVolume)
-			end
 			
-			if(SoundManager.SfxVolume ~= -1) then
-			local SfxVolume = Game.GetSettingsSystem():GetVar("/audio/volume", "SfxVolume")
-			SfxVolume:SetValue(SoundManager.SfxVolume)
-			end
+			
 		
 		
 		
@@ -175,15 +153,8 @@ function SoundManager.Resume(channel)
 		
 		if(channel == "env") then
 			
-			if(SoundManager.DialogueVolume ~= -1) then
-			local DialogueVolume = Game.GetSettingsSystem():GetVar("/audio/volume", "DialogueVolume")
-			DialogueVolume:SetValue(0)
-			end
 			
-			if(SoundManager.SfxVolume ~= -1) then
-			local SfxVolume = Game.GetSettingsSystem():GetVar("/audio/volume", "SfxVolume")
-			SfxVolume:SetValue(0)
-			end
+			
 			
 			
 			os.remove("pauseenv.txt")
@@ -192,33 +163,21 @@ function SoundManager.Resume(channel)
 		
 		
 		if(channel == "music") then
-			if(SoundManager.MusicVolume ~= -1) then
+			
 			local MusicVolume = Game.GetSettingsSystem():GetVar("/audio/volume", "MusicVolume")
 			MusicVolume:SetValue(0)
-			end
 			
-			if(SoundManager.CarRadioVolume ~= -1) then
+			
+			
 			local CarRadioVolume = Game.GetSettingsSystem():GetVar("/audio/volume", "CarRadioVolume")
 			CarRadioVolume:SetValue(0)
-			end
+			
 				os.remove("pausemusic.txt")
 		end
 		
 		if(channel == "sound") then
-			if(SoundManager.MusicVolume == -1) then
-			local MusicVolume = Game.GetSettingsSystem():GetVar("/audio/volume", "MusicVolume")
-			MusicVolume:SetValue(0)
-			end
 			
-			if(SoundManager.CarRadioVolume == -1) then
-			local CarRadioVolume = Game.GetSettingsSystem():GetVar("/audio/volume", "CarRadioVolume")
-			CarRadioVolume:SetValue(0)
-			end
 			
-			if(SoundManager.SfxVolume == -1) then
-			local SfxVolume = Game.GetSettingsSystem():GetVar("/audio/volume", "SfxVolume")
-			SfxVolume:SetValue(0)
-			end
 				os.remove("pausesound.txt")
 		end
 		
@@ -234,57 +193,31 @@ function SoundManager.Stop(channel)
 	
 		
 		if(channel == "env") then
-			if(SoundManager.DialogueVolume ~= -1) then
-			local DialogueVolume = Game.GetSettingsSystem():GetVar("/audio/volume", "DialogueVolume")
-			DialogueVolume:SetValue(SoundManager.DialogueVolume)
-			SoundManager.DialogueVolume = -1
-			end
 			
-			if(SoundManager.SfxVolume ~= -1) then
-			local SfxVolume = Game.GetSettingsSystem():GetVar("/audio/volume", "SfxVolume")
-			SfxVolume:SetValue(SoundManager.SfxVolume)
-			SoundManager.SfxVolume = -1
-			end
-			
+		
 			os.remove("pauseenv.txt")
 				io.open("stopenv.txt","w"):close()
 		end
 		
 		
 		if(channel == "music") then
-			if(SoundManager.MusicVolume ~= -1) then
+			
 			local MusicVolume = Game.GetSettingsSystem():GetVar("/audio/volume", "MusicVolume")
 			MusicVolume:SetValue(SoundManager.MusicVolume)
-			SoundManager.MusicVolume = -1
-			end
 			
-			if(SoundManager.CarRadioVolume ~= -1) then
+			
+		
 			local CarRadioVolume = Game.GetSettingsSystem():GetVar("/audio/volume", "CarRadioVolume")
 			CarRadioVolume:SetValue(SoundManager.CarRadioVolume)
-			SoundManager.CarRadioVolume = -1
-			end
+			
 					os.remove("pausemusic.txt")
 				io.open("stopmusic.txt","w"):close()
 		end
 		
 		if(channel == "sound") then
-			if(SoundManager.MusicVolume ~= -1) then
-			local MusicVolume = Game.GetSettingsSystem():GetVar("/audio/volume", "MusicVolume")
-			MusicVolume:SetValue(SoundManager.MusicVolume)
-			SoundManager.MusicVolume = -1
-			end
+		
 			
-			if(SoundManager.CarRadioVolume ~= -1) then
-			local CarRadioVolume = Game.GetSettingsSystem():GetVar("/audio/volume", "CarRadioVolume")
-			CarRadioVolume:SetValue(SoundManager.CarRadioVolume)
-			SoundManager.CarRadioVolume = -1
-			end
 			
-			if(SoundManager.SfxVolume ~= -1) then
-			local SfxVolume = Game.GetSettingsSystem():GetVar("/audio/volume", "SfxVolume")
-			SfxVolume:SetValue(SoundManager.SfxVolume)
-			SoundManager.SfxVolume = -1
-			end
 				os.remove("pausesound.txt")
 				io.open("stopsound.txt","w"):close()
 		end
@@ -349,5 +282,21 @@ local bool = false
 	
 end
 
+
+
+function SoundManager.SetSoundSettingValue(volumTag,value)
+	
+	local SfxVolume = Game.GetSettingsSystem():GetVar("/audio/volume", volumTag)
+	SoundManager.SfxVolume = SfxVolume:GetValue()
+	SfxVolume:SetValue(value)
+	
+end
+
+
+function SoundManager.GetSoundSettingValue(volumTag)
+	
+	local SfxVolume = Game.GetSettingsSystem():GetVar("/audio/volume", volumTag)
+	return SfxVolume:GetValue()
+end
 
 return SoundManager
