@@ -1,6 +1,7 @@
-print("Sound Manager : loaded")
+
 
 SoundManager = {}
+SoundManager.Version = 6
 SoundManager.MasterVolume = -1
 SoundManager.SfxVolume = -1
 SoundManager.DialogueVolume = -1
@@ -32,6 +33,7 @@ end
 
 SoundManager.Init()
 
+print("Sound Manager v."..SoundManager.Version.." : loaded")
 
 function SoundManager.PlaySound(file,path,channel)
 	
