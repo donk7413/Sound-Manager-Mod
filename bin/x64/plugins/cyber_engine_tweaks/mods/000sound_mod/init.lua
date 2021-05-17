@@ -7,10 +7,7 @@ SoundManager.SfxVolume = -1
 SoundManager.DialogueVolume = -1
 SoundManager.MusicVolume = -1
 SoundManager.CarRadioVolume = -1
-
-function SoundManager.Init()
-	
-	local MasterVolume = Game.GetSettingsSystem():GetVar("/audio/volume", "MasterVolume")
+local MasterVolume = Game.GetSettingsSystem():GetVar("/audio/volume", "MasterVolume")
 	SoundManager.MasterVolume = MasterVolume:GetValue()
 	
 	local SfxVolume = Game.GetSettingsSystem():GetVar("/audio/volume", "SfxVolume")
@@ -24,13 +21,6 @@ function SoundManager.Init()
 	
 	local CarRadioVolume = Game.GetSettingsSystem():GetVar("/audio/volume", "CarRadioVolume")
 	SoundManager.CarRadioVolume = CarRadioVolume:GetValue()
-	
-	
-	
-	
-end
-
-
 
 
 print("Sound Manager v."..SoundManager.Version.." : loaded")
