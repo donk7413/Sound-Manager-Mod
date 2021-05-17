@@ -27,7 +27,7 @@ local MasterVolume = Game.GetSettingsSystem():GetVar("/audio/volume", "MasterVol
 
 print("Sound Manager v."..SoundManager.Version.." : loaded")
 end)
-function SoundManager.PlaySound(file,path,channel)
+function SoundManager.PlaySound(file,path,channel,volume)
 	
 	
 		
@@ -37,12 +37,18 @@ function SoundManager.PlaySound(file,path,channel)
 			
 			
 			
-			io.open("env.txt","w"):close()
+			io.open("env.json","w"):close()
 			
-			local f = assert(io.open("env.txt", "w"))
-			local filepath = path.."\\"..file
-			print(filepath)
-			f:write(filepath)
+			local f = assert(io.open("env.json", "w"))
+			
+			local obj = {}
+			obj.path = path.."\\"..file
+			obj.volume = volume
+			
+			
+			local stringg = json.encode(obj)
+		
+			f:write(stringg)
 			f:close()
 		end
 		
@@ -59,12 +65,17 @@ function SoundManager.PlaySound(file,path,channel)
 			CarRadioVolume:SetValue(0)
 			
 			
-			io.open("music.txt","w"):close()
+			io.open("music.json","w"):close()
 			
-			local f = assert(io.open("music.txt", "w"))
-			local filepath = path..'\\'..file
-			print(filepath)
-			f:write(filepath)
+			local f = assert(io.open("music.json", "w"))
+			local obj = {}
+			obj.path = path.."\\"..file
+			obj.volume = volume
+			
+			
+			local stringg = json.encode(obj)
+		
+			f:write(stringg)
 			f:close()
 		end
 		
@@ -72,12 +83,17 @@ function SoundManager.PlaySound(file,path,channel)
 			
 		
 			
-			io.open("sound.txt","w"):close()
+			io.open("sound.json","w"):close()
 			
-			local f = assert(io.open("sound.txt", "w"))
-			local filepath = path.."\\"..file
-			print(filepath)
-			f:write(filepath)
+			local f = assert(io.open("sound.json", "w"))
+			local obj = {}
+			obj.path = path.."\\"..file
+			obj.volume = volume
+			
+			
+			local stringg = json.encode(obj)
+		
+			f:write(stringg)
 			f:close()
 		end
 		
@@ -232,7 +248,7 @@ local bool = false
 		if(channel == "env") then
 			
 			
-			local f = io.open("env.txt")
+			local f = io.open("env.json")
 			local lines = f:read("*a")
 				
 			if(lines ~= "") then
@@ -247,7 +263,7 @@ local bool = false
 		if(channel == "music") then
 			
 			
-			local f = io.open("music.txt")
+			local f = io.open("music.json")
 			local lines = f:read("*a")
 				
 			if(lines ~= "") then
@@ -260,7 +276,7 @@ local bool = false
 		end
 		
 		if(channel == "sound") then
-			local f = io.open("sound.txt")
+			local f = io.open("sound.json")
 			local lines = f:read("*a")
 				
 			if(lines ~= "") then

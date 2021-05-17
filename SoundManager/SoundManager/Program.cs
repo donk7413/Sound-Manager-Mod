@@ -1,5 +1,6 @@
 ﻿using Microsoft.VisualStudio.Threading;
 using NAudio.Wave;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -24,10 +25,17 @@ namespace SoundManager
             bool test = true;
 
             string music = "";
+            bool Debug = File.Exists(@"..\debug.txt");
             Multithreading multi = new Multithreading();
             Thread thd01 = new Thread(() => multi.playMusic());
             Thread thd02 = new Thread(() => multi.playSound());
             Thread thd03 = new Thread(() => multi.playEnvironnement());
+
+            if (Debug)
+            {
+                Console.WriteLine("Debug activated");
+            }
+
             while (test)
             {
                 //await multi.playMusic();
@@ -64,15 +72,15 @@ namespace SoundManager
                 //ExecuteParallel(() => multi.playSound(), () => multi.playMusic());
 
                 
-                if (Process.GetProcessesByName("Cyberpunk2077").Length > 0)
+                if (Process.GetProcessesByName("Cyberpunk2077").Length > 0 || Debug == true)
                 {
                    
                 }
                 else
                 {
-                    new FileStream(@"..\music.txt", FileMode.Truncate).Close();
-                    new FileStream(@"..\env.txt", FileMode.Truncate).Close();
-                    new FileStream(@"..\sound.txt", FileMode.Truncate).Close();
+                    new FileStream(@"..\music.json", FileMode.Truncate).Close();
+                    new FileStream(@"..\env.json", FileMode.Truncate).Close();
+                    new FileStream(@"..\sound.json", FileMode.Truncate).Close();
                     System.Environment.Exit(1);
                 }
 
@@ -122,21 +130,24 @@ namespace SoundManager
                 bool result = false;
                 try
                 {
-                    using (StreamReader r = new StreamReader(@"..\sound.txt"))
+                    using (StreamReader r = new StreamReader(@"..\sound.json"))
                     {
                         sound = r.ReadToEnd();
                         r.Close();
                     }
                     if (sound.Length != 0)
                     {
+                        var file = JsonConvert.DeserializeObject<SoundFile>(sound);
                         outputsound = new WaveOutEvent();
                         //outputsound.Volume = (float)1;
-                        using (var audioFile = new AudioFileReader(@"..\..\"+sound))
+                        using (var audioFile = new AudioFileReader(@"..\..\"+file.path))
                         using (var outputDevice = outputsound)
                         {
-                            Console.WriteLine("Playing sounds: " + sound);
-                            outputDevice.Init(audioFile);
+                            Console.WriteLine("Playing sounds: " + file.path);
+                          
+                            audioFile.Volume = Convert.ToSingle(file.volume/100);
 
+                            outputDevice.Init(audioFile);
                             outputDevice.Play();
 
 
@@ -210,7 +221,7 @@ namespace SoundManager
 
                             }
                             Console.WriteLine("sounds played, waiting for another sound");
-                            new FileStream(@"..\sound.txt", FileMode.Truncate).Close();
+                            new FileStream(@"..\sound.json", FileMode.Truncate).Close();
 
                         }
 
@@ -239,7 +250,7 @@ namespace SoundManager
                 bool result = false;
                 try
                 {
-                    using (StreamReader r = new StreamReader(@"..\env.txt"))
+                    using (StreamReader r = new StreamReader(@"..\env.json"))
                     {
                         sound = r.ReadToEnd();
                         r.Close();
@@ -247,13 +258,16 @@ namespace SoundManager
                     if (sound.Length != 0)
                     {
                         outputenv = new WaveOutEvent();
+                        var file = JsonConvert.DeserializeObject<SoundFile>(sound);
                         //outputenv.Volume = (float)0.1;
-                        using (var audioFile = new AudioFileReader(@"..\..\"+sound))
+                        using (var audioFile = new AudioFileReader(@"..\..\" + file.path))
                         using (var outputDevice = outputenv)
                         {
-                            Console.WriteLine("Playing sounds: " + sound);
+                            Console.WriteLine("Playing sounds: " + file.path);
+                           
+                            audioFile.Volume = Convert.ToSingle(file.volume / 100);
 
-                            
+
                             outputDevice.Init(audioFile);
                             outputDevice.Play();
 
@@ -329,7 +343,7 @@ namespace SoundManager
 
 
                             Console.WriteLine("env played, waiting for another env");
-                            new FileStream(@"..\env.txt", FileMode.Truncate).Close();
+                            new FileStream(@"..\env.json", FileMode.Truncate).Close();
 
 
                         }
@@ -359,7 +373,7 @@ namespace SoundManager
                 string music = "";
                 try
                 {
-                    using (StreamReader r = new StreamReader(@"..\music.txt"))
+                    using (StreamReader r = new StreamReader(@"..\music.json"))
                     {
                         music = r.ReadToEnd();
                         r.Close();
@@ -367,13 +381,17 @@ namespace SoundManager
                     if (music.Length != 0)
                     {
                         outputmusic = new WaveOutEvent();
-                        //outputmusic.Volume = (float)0.5;
-                        using (var audioFile = new AudioFileReader(@"..\..\" + music))
+                     
+                        var file = JsonConvert.DeserializeObject<SoundFile>(music);
+                       
+                        using (var audioFile = new AudioFileReader(@"..\..\" + file.path))
                         using (var outputDevice = outputmusic)
                         {
-                            Console.WriteLine("Playing music: " + music);
+                            Console.WriteLine("Playing sounds: " + file.path);
+
+                            audioFile.Volume = Convert.ToSingle(file.volume / 100);
+
                             outputDevice.Init(audioFile);
-                            //outputDevice.Volume = (float)1;
                             outputDevice.Play();
                             string stopfile = @"..\stopmusic.txt";
                             string pausefile = @"..\pausemusic.txt";
@@ -449,7 +467,7 @@ namespace SoundManager
 
 
                             Console.WriteLine("sounds music, waiting for another music");
-                            new FileStream(@"..\music.txt", FileMode.Truncate).Close();
+                            new FileStream(@"..\music.json", FileMode.Truncate).Close();
                         }
 
                     }
