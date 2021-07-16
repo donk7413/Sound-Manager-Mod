@@ -42,9 +42,10 @@ namespace SoundManager
             {
                 if (!(Process.GetProcessesByName("Cyberpunk2077").Length > 0 || Debug))
                 {
-                    new FileStream(@"..\music.json", FileMode.Truncate).Close();
-                    new FileStream(@"..\env.json", FileMode.Truncate).Close();
-                    new FileStream(@"..\sound.json", FileMode.Truncate).Close();
+                    File.WriteAllText(@"..\music.json", "");
+                    File.WriteAllText(@"..\env.json", "");
+                    File.WriteAllText(@"..\sound.json", "");
+
                     System.Environment.Exit(1);
                 }
 
@@ -150,6 +151,8 @@ namespace SoundManager
                         //Console.WriteLine("waiting for a file");
                     }
                 }
+
+                Thread.Sleep(200);
             }
         }
 
@@ -241,6 +244,8 @@ namespace SoundManager
                         // Console.WriteLine("waiting for a file");
                     }
                 }
+
+                Thread.Sleep(200);
             }
         }
 
@@ -334,6 +339,8 @@ namespace SoundManager
                         // Console.WriteLine("waiting for a file");
                     }
                 }
+
+                Thread.Sleep(200);
             }
         }
     }
