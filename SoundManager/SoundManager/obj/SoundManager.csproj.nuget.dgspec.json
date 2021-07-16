@@ -44,10 +44,6 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "dependencies": {
-            "Microsoft.VisualStudio.Threading": {
-              "target": "Package",
-              "version": "[16.9.60, )"
-            },
             "NAudio": {
               "target": "Package",
               "version": "[2.0.0, )"
@@ -55,10 +51,6 @@
             "Newtonsoft.Json": {
               "target": "Package",
               "version": "[13.0.1, )"
-            },
-            "System.Windows.Extensions": {
-              "target": "Package",
-              "version": "[5.0.0, )"
             }
           },
           "imports": [
