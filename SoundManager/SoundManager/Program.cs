@@ -17,66 +17,30 @@ namespace SoundManager
         static void Main(string[] args)
         {
             Console.WriteLine("Starting Listen for a sound!");
-            Console.WriteLine(System.IO.Directory.GetCurrentDirectory());
-            System.IO.DirectoryInfo directoryInfo =
-                    System.IO.Directory.GetParent(System.IO.Directory.GetCurrentDirectory());
+            Console.WriteLine(Directory.GetCurrentDirectory());
+            DirectoryInfo directoryInfo = Directory.GetParent(Directory.GetCurrentDirectory());
 
             System.Console.WriteLine(directoryInfo.FullName);
-            bool test = true;
-
-            string music = "";
+            bool Activated = true;
             bool Debug = File.Exists(@"..\debug.txt");
-            Multithreading multi = new Multithreading();
-            Thread thd01 = new Thread(() => multi.playMusic());
-            Thread thd02 = new Thread(() => multi.playSound());
-            Thread thd03 = new Thread(() => multi.playEnvironnement());
-
+            
             if (Debug)
             {
                 Console.WriteLine("Debug activated");
             }
 
-            while (test)
+
+            Thread thd01 = new Thread(() => Multithreading.playMusic(Activated));
+            Thread thd02 = new Thread(() => Multithreading.playSound(Activated));
+            Thread thd03 = new Thread(() => Multithreading.playEnvironnement(Activated));
+
+            thd01.Start();
+            thd02.Start();
+            thd03.Start();
+
+            while(Activated)
             {
-                //await multi.playMusic();
-                //     await multi.playSound();
-                // Task task1 = Task.Factory.StartNew(() => multi.playMusic());
-                // //Task task2 = Task.Factory.StartNew(() => multi.playSound());
-
-
-
-                if (!thd02.IsAlive)
-                {
-                    thd02 = new Thread(() => multi.playSound());
-                    thd02.Start();
-                }
-
-
-
-                // Activer l'exécution newThread.
-                if (!thd01.IsAlive)
-                {
-                    thd01 = new Thread(() => multi.playMusic());
-                    thd01.Start();
-                }
-
-                if (!thd03.IsAlive)
-                {
-                    thd03 = new Thread(() => multi.playEnvironnement());
-                    thd03.Start();
-                }
-
-
-                //Console.WriteLine("Call Write('-') in main Thread...\n");
-
-                //ExecuteParallel(() => multi.playSound(), () => multi.playMusic());
-
-                
-                if (Process.GetProcessesByName("Cyberpunk2077").Length > 0 || Debug == true)
-                {
-                   
-                }
-                else
+                if (!(Process.GetProcessesByName("Cyberpunk2077").Length > 0 || Debug))
                 {
                     new FileStream(@"..\music.json", FileMode.Truncate).Close();
                     new FileStream(@"..\env.json", FileMode.Truncate).Close();
@@ -84,407 +48,293 @@ namespace SoundManager
                     System.Environment.Exit(1);
                 }
 
-                // //SomeMethod(multi);
-
-
-
-                // //Task.WaitAll(task1, task2);
-                // //Console.WriteLine("All threads complete");
-
+                Thread.Sleep(1000);
             }
-
-
-
-        }
-
-
-        static void NormalAction()
-        {
-            Console.WriteLine($"Method 1, Thread={Thread.CurrentThread.ManagedThreadId}");
         }
     }
 
-    public class Multithreading
+      
+
+    public static class Multithreading
     {
-        public WaveOutEvent outputmusic { get; set; }
-
-        public WaveOutEvent outputsound { get; set; }
-
-        public WaveOutEvent outputenv { get; set; }
-
-        public Multithreading()
+        public static void playSound(bool Activate)
         {
-            this.outputmusic = new WaveOutEvent();
+            WaveOutEvent outputsound = new WaveOutEvent();
 
-            this.outputsound = new WaveOutEvent();
-
-            this.outputenv = new WaveOutEvent();
-
-        }
-
-        public string playSound()
-        {
-            if (outputsound.PlaybackState != PlaybackState.Playing)
+            while(Activate)
             {
-                string sound = "";
-                bool result = false;
-                try
+                if (outputsound.PlaybackState != PlaybackState.Playing)
                 {
-                    using (StreamReader r = new StreamReader(@"..\sound.json"))
+                    string sound = "";
+                   
+                    try
                     {
-                        sound = r.ReadToEnd();
-                        r.Close();
-                    }
-                    if (sound.Length != 0)
-                    {
-                        var file = JsonConvert.DeserializeObject<SoundFile>(sound);
-                        outputsound = new WaveOutEvent();
-                        //outputsound.Volume = (float)1;
-                        using (var audioFile = new AudioFileReader(@"..\..\"+file.path))
-                        using (var outputDevice = outputsound)
+                        using (StreamReader r = new StreamReader(@"..\sound.json"))
                         {
-                            Console.WriteLine("Playing sounds: " + file.path);
-                          
-                            audioFile.Volume = Convert.ToSingle(file.volume/100);
-
-                            outputDevice.Init(audioFile);
-                            outputDevice.Play();
-
-
-                            bool isPlaying = true;
-                            string stopfile = @"..\stopsound.txt";
-                            string pausefile = @"..\pausesound.txt";
-                            while (isPlaying)
-                            {
-                                while (outputDevice.PlaybackState == PlaybackState.Playing)
-                                {
-
-
-
-
-
-                                    if (File.Exists(stopfile) == true)
-                                    {
-                                        outputDevice.Stop();
-                                        File.Delete(stopfile);
-                                    }
-                                    else if (File.Exists(pausefile) == true)
-                                    {
-                                        outputDevice.Pause();
-                                        Thread.Sleep(1000);
-                                    }
-
-                                    else
-                                    {
-
-                                        Thread.Sleep(1000);
-                                    }
-
-
-
-                                }
-
-                                while (outputDevice.PlaybackState == PlaybackState.Paused)
-                                {
-
-
-
-
-
-
-
-                                    if (File.Exists(stopfile) == true)
-                                    {
-                                        outputDevice.Stop();
-                                        File.Delete(stopfile);
-                                    }
-                                    else if (File.Exists(pausefile) == true)
-                                    {
-
-                                        Thread.Sleep(1000);
-                                    }
-                                    else
-                                    {
-                                        outputDevice.Play();
-                                        Thread.Sleep(1000);
-                                    }
-
-
-
-
-                                }
-
-                                if (outputDevice.PlaybackState == PlaybackState.Stopped)
-                                {
-                                    isPlaying = false;
-                                }
-
-                            }
-                            Console.WriteLine("sounds played, waiting for another sound");
-                            new FileStream(@"..\sound.json", FileMode.Truncate).Close();
-
+                            sound = r.ReadToEnd();
+                            r.Close();
                         }
+                        if (sound.Length != 0)
+                        {
+                            var file = JsonConvert.DeserializeObject<SoundFile>(sound);
+                            outputsound = new WaveOutEvent();
+                            //outputsound.Volume = (float)1;
+                            using (var audioFile = new AudioFileReader(@"..\..\" + file.path))
+                            using (var outputDevice = outputsound)
+                            {
+                                Console.WriteLine("Playing sounds: " + file.path);
 
+                                audioFile.Volume = Convert.ToSingle(file.volume / 100);
+
+                                outputDevice.Init(audioFile);
+                                outputDevice.Play();
+
+
+                                bool isPlaying = true;
+                                string stopfile = @"..\stopsound.txt";
+                                string pausefile = @"..\pausesound.txt";
+                                while (isPlaying)
+                                {
+                                    while (outputDevice.PlaybackState == PlaybackState.Playing)
+                                    {
+                                        if (File.Exists(stopfile) == true)
+                                        {
+                                            outputDevice.Stop();
+                                            File.Delete(stopfile);
+                                        }
+                                        else if (File.Exists(pausefile) == true)
+                                        {
+                                            outputDevice.Pause();
+                                            Thread.Sleep(1000);
+                                        }
+
+                                        else
+                                        {
+
+                                            Thread.Sleep(1000);
+                                        }
+                                    }
+
+                                    while (outputDevice.PlaybackState == PlaybackState.Paused)
+                                    {
+                                        if (File.Exists(stopfile) == true)
+                                        {
+                                            outputDevice.Stop();
+                                            File.Delete(stopfile);
+                                        }
+                                        else if (File.Exists(pausefile) == true)
+                                        {
+
+                                            Thread.Sleep(1000);
+                                        }
+                                        else
+                                        {
+                                            outputDevice.Play();
+                                            Thread.Sleep(1000);
+                                        }
+                                    }
+
+                                    if (outputDevice.PlaybackState == PlaybackState.Stopped)
+                                    {
+                                        isPlaying = false;
+                                    }
+
+                                }
+                                Console.WriteLine("sounds played, waiting for another sound");
+                                new FileStream(@"..\sound.json", FileMode.Truncate).Close();
+                            }
+                        }
                     }
-                    //else
-                    //{
-                    //    Console.WriteLine("waiting for a sound");
-                    //}
-
-
-                }
-                catch
-                {
-                    //Console.WriteLine("waiting for a file");
+                    catch
+                    {
+                        //Console.WriteLine("waiting for a file");
+                    }
                 }
             }
-            return "";
-
         }
 
-        public string playEnvironnement()
+        public static void playEnvironnement(bool Activate)
         {
-            if (outputenv.PlaybackState != PlaybackState.Playing)
+
+            WaveOutEvent outputenv = new WaveOutEvent();
+            while (Activate)
             {
-                string sound = "";
-                bool result = false;
-                try
+                if (outputenv.PlaybackState != PlaybackState.Playing)
                 {
-                    using (StreamReader r = new StreamReader(@"..\env.json"))
+                    string sound = "";
+                    try
                     {
-                        sound = r.ReadToEnd();
-                        r.Close();
-                    }
-                    if (sound.Length != 0)
-                    {
-                        outputenv = new WaveOutEvent();
-                        var file = JsonConvert.DeserializeObject<SoundFile>(sound);
-                        //outputenv.Volume = (float)0.1;
-                        using (var audioFile = new AudioFileReader(@"..\..\" + file.path))
-                        using (var outputDevice = outputenv)
+                        sound = File.ReadAllText(@"..\env.json");
+
+                        if (sound.Length != 0)
                         {
-                            Console.WriteLine("Playing sounds: " + file.path);
-                           
-                            audioFile.Volume = Convert.ToSingle(file.volume / 100);
-
-
-                            outputDevice.Init(audioFile);
-                            outputDevice.Play();
-
-                            bool isPlaying = true;
-                            string stopfile = @"..\stopenv.txt";
-                            string pausefile = @"..\pauseenv.txt";
-                            while (isPlaying)
+                            outputenv = new WaveOutEvent();
+                            var file = JsonConvert.DeserializeObject<SoundFile>(sound);
+                            //outputenv.Volume = (float)0.1;
+                            using (var audioFile = new AudioFileReader(@"..\..\" + file.path))
+                            using (var outputDevice = outputenv)
                             {
-                                while (outputDevice.PlaybackState == PlaybackState.Playing)
+                                Console.WriteLine("Playing sounds: " + file.path);
+
+                                audioFile.Volume = Convert.ToSingle(file.volume / 100);
+
+                                outputDevice.Init(audioFile);
+                                outputDevice.Play();
+
+                                bool isPlaying = true;
+                                string stopfile = @"..\stopenv.txt";
+                                string pausefile = @"..\pauseenv.txt";
+                                while (isPlaying)
                                 {
-                                    
-
-
-
-
-                                    if (File.Exists(stopfile) == true)
+                                    while (outputDevice.PlaybackState == PlaybackState.Playing)
                                     {
-                                        outputDevice.Stop();
-                                        File.Delete(stopfile);
-                                    }
-                                    else if (File.Exists(pausefile) == true)
-                                    {
-                                        outputDevice.Pause();
-                                        Thread.Sleep(1000);
-                                    }
+                                        if (File.Exists(stopfile) == true)
+                                        {
+                                            outputDevice.Stop();
+                                            File.Delete(stopfile);
+                                        }
+                                        else if (File.Exists(pausefile) == true)
+                                        {
+                                            outputDevice.Pause();
+                                            Thread.Sleep(1000);
+                                        }
 
-                                    else
-                                    {
-
-                                        Thread.Sleep(1000);
+                                        else
+                                        {
+                                            Thread.Sleep(1000);
+                                        }
                                     }
 
+                                    while (outputDevice.PlaybackState == PlaybackState.Paused)
+                                    {
+                                        if (File.Exists(stopfile) == true)
+                                        {
+                                            outputDevice.Stop();
+                                            File.Delete(stopfile);
+                                        }
+                                        else if (File.Exists(pausefile) == true)
+                                        {
 
+                                            Thread.Sleep(1000);
+                                        }
+                                        else
+                                        {
+                                            outputDevice.Play();
+                                            Thread.Sleep(1000);
+                                        }
+                                    }
+
+                                    if (outputDevice.PlaybackState == PlaybackState.Stopped)
+                                    {
+                                        isPlaying = false;
+                                    }
 
                                 }
 
-                                while (outputDevice.PlaybackState == PlaybackState.Paused)
-                                {
-                                   
-
-
-
-
-
-
-                                    if (File.Exists(stopfile) == true)
-                                    {
-                                        outputDevice.Stop();
-                                        File.Delete(stopfile);
-                                    }
-                                    else if (File.Exists(pausefile) == true)
-                                    {
-
-                                        Thread.Sleep(1000);
-                                    }
-                                    else
-                                    {
-                                        outputDevice.Play();
-                                        Thread.Sleep(1000);
-                                    }
-
-
-
-
-                                }
-
-                                if (outputDevice.PlaybackState == PlaybackState.Stopped)
-                                {
-                                    isPlaying = false;
-                                }
-
+                                Console.WriteLine("env played, waiting for another env");
+                                new FileStream(@"..\env.json", FileMode.Truncate).Close();
                             }
-
-
-                            Console.WriteLine("env played, waiting for another env");
-                            new FileStream(@"..\env.json", FileMode.Truncate).Close();
-
-
                         }
-
                     }
-                    //else
-                    //{
-                    //    Console.WriteLine("waiting for a sound");
-                    //}
-
-
-                }
-                catch
-                {
-                   // Console.WriteLine("waiting for a file");
+                    catch
+                    {
+                        // Console.WriteLine("waiting for a file");
+                    }
                 }
             }
-            return "";
-
         }
 
 
-        public string playMusic()
+        public static void playMusic(bool Activate)
         {
-            if (outputmusic.PlaybackState != PlaybackState.Playing)
+            WaveOutEvent outputmusic = new WaveOutEvent();
+
+            while (Activate)
             {
-                string music = "";
-                try
+                if (outputmusic.PlaybackState != PlaybackState.Playing)
                 {
-                    using (StreamReader r = new StreamReader(@"..\music.json"))
+                    string music = "";
+                    try
                     {
-                        music = r.ReadToEnd();
-                        r.Close();
-                    }
-                    if (music.Length != 0)
-                    {
-                        outputmusic = new WaveOutEvent();
-                     
-                        var file = JsonConvert.DeserializeObject<SoundFile>(music);
-                       
-                        using (var audioFile = new AudioFileReader(@"..\..\" + file.path))
-                        using (var outputDevice = outputmusic)
+                        music = File.ReadAllText(@"..\music.json");
+                         
+                        if (music.Length != 0)
                         {
-                            Console.WriteLine("Playing sounds: " + file.path);
+                            outputmusic = new WaveOutEvent();
 
-                            audioFile.Volume = Convert.ToSingle(file.volume / 100);
+                            var file = JsonConvert.DeserializeObject<SoundFile>(music);
 
-                            outputDevice.Init(audioFile);
-                            outputDevice.Play();
-                            string stopfile = @"..\stopmusic.txt";
-                            string pausefile = @"..\pausemusic.txt";
-
-                            bool isPlaying = true;
-                            while (isPlaying)
+                            using (var audioFile = new AudioFileReader(@"..\..\" + file.path))
+                            using (var outputDevice = outputmusic)
                             {
-                                while (outputDevice.PlaybackState == PlaybackState.Playing)
+                                Console.WriteLine("Playing sounds: " + file.path);
+
+                                audioFile.Volume = Convert.ToSingle(file.volume / 100);
+
+                                outputDevice.Init(audioFile);
+                                outputDevice.Play();
+                                string stopfile = @"..\stopmusic.txt";
+                                string pausefile = @"..\pausemusic.txt";
+
+                                bool isPlaying = true;
+                                while (isPlaying)
                                 {
-                                 
-
-
-
-
-
-
-                                    if (File.Exists(stopfile) == true)
+                                    while (outputDevice.PlaybackState == PlaybackState.Playing)
                                     {
-                                        outputDevice.Stop();
-                                        File.Delete(stopfile);
-                                    }
-                                    else if (File.Exists(pausefile) == true)
-                                    {
-                                        outputDevice.Pause();
-                                        Thread.Sleep(1000);
-                                    }
+                                        if (File.Exists(stopfile) == true)
+                                        {
+                                            outputDevice.Stop();
+                                            File.Delete(stopfile);
+                                        }
+                                        else if (File.Exists(pausefile) == true)
+                                        {
+                                            outputDevice.Pause();
+                                            Thread.Sleep(1000);
+                                        }
 
-                                    else
-                                    {
+                                        else
+                                        {
 
-                                        Thread.Sleep(1000);
+                                            Thread.Sleep(1000);
+                                        }
                                     }
 
+                                    while (outputDevice.PlaybackState == PlaybackState.Paused)
+                                    {
+                                        if (File.Exists(stopfile) == true)
+                                        {
+                                            outputDevice.Stop();
+                                            File.Delete(stopfile);
+                                        }
+                                        else if (File.Exists(pausefile) == true)
+                                        {
 
+                                            Thread.Sleep(1000);
+                                        }
+                                        else
+                                        {
+                                            outputDevice.Play();
+                                            Thread.Sleep(1000);
+                                        }
+                                    }
 
+                                    if (outputDevice.PlaybackState == PlaybackState.Stopped)
+                                    {
+                                        isPlaying = false;
+                                    }
                                 }
 
-                                while (outputDevice.PlaybackState == PlaybackState.Paused)
-                                {
-                                  
-
-
-
-
-
-                                    if (File.Exists(stopfile) == true)
-                                    {
-                                        outputDevice.Stop();
-                                        File.Delete(stopfile);
-                                    }
-                                    else if (File.Exists(pausefile) == true)
-                                    {
-
-                                        Thread.Sleep(1000);
-                                    }
-                                    else
-                                    {
-                                        outputDevice.Play();
-                                        Thread.Sleep(1000);
-                                    }
-
-
-
-
-                                }
-
-                                if (outputDevice.PlaybackState == PlaybackState.Stopped)
-                                {
-                                    isPlaying = false;
-                                }
-
+                                Console.WriteLine("sounds music, waiting for another music");
+                                new FileStream(@"..\music.json", FileMode.Truncate).Close();
                             }
-
-
-                            Console.WriteLine("sounds music, waiting for another music");
-                            new FileStream(@"..\music.json", FileMode.Truncate).Close();
                         }
-
                     }
-                    //else
-                    //{
-                    //    Console.WriteLine("waiting for a sound");
-                    //}
-
-
+                    catch
+                    {
+                        // Console.WriteLine("waiting for a file");
+                    }
                 }
-                catch
-                {
-                   // Console.WriteLine("waiting for a file");
-                }
-
             }
-            return "";
         }
     }
     public static class ProcessMonitor
