@@ -62,3 +62,4 @@ C:\Users\doria\Documents\GitHub\Sound-Manager-Mod\SoundManager\SoundManager\obj\
 C:\Users\doria\Documents\GitHub\Sound-Manager-Mod\SoundManager\SoundManager\obj\Release\netcoreapp3.1\SoundManager.dll
 C:\Users\doria\Documents\GitHub\Sound-Manager-Mod\SoundManager\SoundManager\obj\Release\netcoreapp3.1\SoundManager.pdb
 C:\Users\doria\Documents\GitHub\Sound-Manager-Mod\SoundManager\SoundManager\obj\Release\netcoreapp3.1\SoundManager.genruntimeconfig.cache
+C:\Users\doria\Documents\GitHub\Sound-Manager-Mod\SoundManager\SoundManager\obj\Release\netcoreapp3.1\SoundManager.csproj.AssemblyReference.cache

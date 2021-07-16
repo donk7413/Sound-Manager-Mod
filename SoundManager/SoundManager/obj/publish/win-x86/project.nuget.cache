@@ -1,0 +1,29 @@
+{
+  "version": 2,
+  "dgSpecHash": "IN9F+6GNxIYvZZYlDnvHoj/5IvU1iwNKmH6/QbIW57Pr8We77w58CC09oxVYGmJgUmTN/dNwZn76MHmCBdbjgA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\doria\\Documents\\GitHub\\Sound-Manager-Mod\\SoundManager\\SoundManager\\SoundManager.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\doria\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\5.0.0\\microsoft.bcl.asyncinterfaces.5.0.0.nupkg.sha512",
+    "C:\\Users\\doria\\.nuget\\packages\\microsoft.netcore.platforms\\5.0.0\\microsoft.netcore.platforms.5.0.0.nupkg.sha512",
+    "C:\\Users\\doria\\.nuget\\packages\\microsoft.visualstudio.threading\\16.9.60\\microsoft.visualstudio.threading.16.9.60.nupkg.sha512",
+    "C:\\Users\\doria\\.nuget\\packages\\microsoft.visualstudio.threading.analyzers\\16.9.60\\microsoft.visualstudio.threading.analyzers.16.9.60.nupkg.sha512",
+    "C:\\Users\\doria\\.nuget\\packages\\microsoft.visualstudio.validation\\16.8.33\\microsoft.visualstudio.validation.16.8.33.nupkg.sha512",
+    "C:\\Users\\doria\\.nuget\\packages\\microsoft.win32.registry\\5.0.0\\microsoft.win32.registry.5.0.0.nupkg.sha512",
+    "C:\\Users\\doria\\.nuget\\packages\\microsoft.win32.systemevents\\5.0.0\\microsoft.win32.systemevents.5.0.0.nupkg.sha512",
+    "C:\\Users\\doria\\.nuget\\packages\\naudio\\2.0.0\\naudio.2.0.0.nupkg.sha512",
+    "C:\\Users\\doria\\.nuget\\packages\\naudio.asio\\2.0.0\\naudio.asio.2.0.0.nupkg.sha512",
+    "C:\\Users\\doria\\.nuget\\packages\\naudio.core\\2.0.0\\naudio.core.2.0.0.nupkg.sha512",
+    "C:\\Users\\doria\\.nuget\\packages\\naudio.midi\\2.0.0\\naudio.midi.2.0.0.nupkg.sha512",
+    "C:\\Users\\doria\\.nuget\\packages\\naudio.wasapi\\2.0.0\\naudio.wasapi.2.0.0.nupkg.sha512",
+    "C:\\Users\\doria\\.nuget\\packages\\naudio.winforms\\2.0.0\\naudio.winforms.2.0.0.nupkg.sha512",
+    "C:\\Users\\doria\\.nuget\\packages\\naudio.winmm\\2.0.0\\naudio.winmm.2.0.0.nupkg.sha512",
+    "C:\\Users\\doria\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
+    "C:\\Users\\doria\\.nuget\\packages\\system.drawing.common\\5.0.0\\system.drawing.common.5.0.0.nupkg.sha512",
+    "C:\\Users\\doria\\.nuget\\packages\\system.security.accesscontrol\\5.0.0\\system.security.accesscontrol.5.0.0.nupkg.sha512",
+    "C:\\Users\\doria\\.nuget\\packages\\system.security.principal.windows\\5.0.0\\system.security.principal.windows.5.0.0.nupkg.sha512",
+    "C:\\Users\\doria\\.nuget\\packages\\system.threading.tasks.extensions\\4.5.4\\system.threading.tasks.extensions.4.5.4.nupkg.sha512",
+    "C:\\Users\\doria\\.nuget\\packages\\system.windows.extensions\\5.0.0\\system.windows.extensions.5.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
