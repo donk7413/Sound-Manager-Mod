@@ -1,31 +1,33 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\doria\\Documents\\GitHub\\Sound-Manager-Mod\\SoundManager\\SoundManager\\SoundManager.csproj": {}
+    "C:\\Users\\rchevallier\\Documents\\GitHub\\Sound-Manager-Mod\\SoundManager\\SoundManager\\SoundManager.csproj": {}
   },
   "projects": {
-    "C:\\Users\\doria\\Documents\\GitHub\\Sound-Manager-Mod\\SoundManager\\SoundManager\\SoundManager.csproj": {
+    "C:\\Users\\rchevallier\\Documents\\GitHub\\Sound-Manager-Mod\\SoundManager\\SoundManager\\SoundManager.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\doria\\Documents\\GitHub\\Sound-Manager-Mod\\SoundManager\\SoundManager\\SoundManager.csproj",
+        "projectUniqueName": "C:\\Users\\rchevallier\\Documents\\GitHub\\Sound-Manager-Mod\\SoundManager\\SoundManager\\SoundManager.csproj",
         "projectName": "SoundManager",
-        "projectPath": "C:\\Users\\doria\\Documents\\GitHub\\Sound-Manager-Mod\\SoundManager\\SoundManager\\SoundManager.csproj",
-        "packagesPath": "C:\\Users\\doria\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\doria\\Documents\\GitHub\\Sound-Manager-Mod\\SoundManager\\SoundManager\\obj\\",
+        "projectPath": "C:\\Users\\rchevallier\\Documents\\GitHub\\Sound-Manager-Mod\\SoundManager\\SoundManager\\SoundManager.csproj",
+        "packagesPath": "C:\\Users\\rchevallier\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\rchevallier\\Documents\\GitHub\\Sound-Manager-Mod\\SoundManager\\SoundManager\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\doria\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Users\\rchevallier\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "\\\\SRVSVN.e-metix.fr\\NugetServer": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {

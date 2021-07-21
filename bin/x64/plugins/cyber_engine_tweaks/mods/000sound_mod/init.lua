@@ -37,9 +37,9 @@ function SoundManager.PlaySound(file,path,channel,volume)
 			
 			
 			
-			io.open("env.json","w"):close()
+			local o = io.open("env.json","w"):close()
 			
-			local f = assert(io.open("env.json", "w"))
+			local f = io.open("env.json", "w")
 			
 			local obj = {}
 			obj.path = path.."\\"..file
@@ -248,8 +248,8 @@ local bool = false
 		if(channel == "env") then
 			
 			
-			local f = io.open("env.json")
-			local lines = f:read("*a")
+			local env = io.open("env.json")
+			local lines = env:read("*a")
 				
 			if(lines ~= "") then
 			
@@ -257,7 +257,7 @@ local bool = false
 				
 			
 			end
-			
+			env:close()
 		end
 		
 		if(channel == "music") then
@@ -272,7 +272,7 @@ local bool = false
 				
 			
 			end
-			
+			f:close()
 		end
 		
 		if(channel == "sound") then
@@ -285,6 +285,7 @@ local bool = false
 				
 			
 			end
+			f:close()
 		end
 		
 		return bool
