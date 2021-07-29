@@ -1,0 +1,12 @@
+{
+    "name": "testfunction",
+    "tag": "testfunction",
+    "action": [
+		{
+		
+			"name":"notify",
+			"value": "It's a function ?"
+		
+		}
+    ]
+}

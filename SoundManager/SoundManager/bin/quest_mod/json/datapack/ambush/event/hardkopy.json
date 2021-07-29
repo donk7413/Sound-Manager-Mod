@@ -1,0 +1,490 @@
+{
+	"name": "Aldeldos Ops",
+	"tag": "hardkopy01",
+	"way": "ambush",
+	"trigger": {
+		"trigger03": {
+			"name": "compare",
+			"trigger": {
+				"name": "player_inbuilding"
+			},
+			"expected": false
+		},
+		"trigger04": {
+			"name": "player_in_poi"
+		},
+		"trigger05": {
+			"name": "compare",
+			"trigger": {
+				"name": "current_district",
+				"value": "Badlands"
+			},
+			"expected": true
+		}
+	},
+	"requirement": [
+		[
+			"trigger03",
+			"trigger05"
+		]
+	],
+	"action": [
+		{
+			
+			"name": "do_function",
+			
+			"value": "maxtac_wraith"
+			
+		},
+		
+		
+		
+		
+		{
+			"name": "wait_second",
+			"value": 1
+		},
+		{
+			"name": "create_group",
+			"tag": "gangteam"
+		},
+		{
+			"name": "set_entity_to_group",
+			"tag": "gangteam",
+			"entities": [
+				"blue01",
+				"blue02",
+				"blue03",
+				"blue04"
+			]
+		},
+		{
+			"name": "wait_second",
+			"value": 0.5
+		},
+		{
+			"name": "teleport_group_at_relative_position",
+			"x": 0,
+			"y": 0,
+			"z": 0,
+			"rotation": 1,
+			"tag": "gangteam"
+		},
+		{
+			"name": "wait_second",
+			"value": 3
+		},
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		{
+			"name": "notify",
+			"value": "Aldelcaldos Ops in progress"
+		},
+		
+		
+		
+	
+			
+		{
+			"name": "wait_second",
+			"value": 0.5
+		},
+		{
+			 "name": "summon_entity_at_entity_relative","entity":"player",
+			"npc" : 
+				"Vehicle.q000_nomad_border_patrol_heli"
+			,
+			"x": -10,
+			"y": -10,
+			"z": 65,
+			"amount": 1,
+			"tag": "helico",
+			"spawnlevel": 98
+		},
+		
+		{
+				"name": "wait_second",
+				"value": 1
+			},
+			
+		{
+			"name": "teleport_player_at_relative_position",
+			"x": 0,
+			"y": 0,
+			"z": 0.5,
+			"rotation": 1
+			
+		},
+		
+		{
+			"name": "wait_second",
+			"value": 0.1
+		},
+			
+		
+		{
+			"name": "teleport_entity_at_relative_position",
+			"x": 0,
+			"y": 0,
+			"z": -1,
+			"rotation": 1,
+			"tag": "helico"
+		},
+		{
+            "name": "for",
+            "amount": 210,
+            "action": [ 
+				{
+				"name": "teleport_entity_at_relative_position",
+				"x": 0,
+				"y": 0,
+				"z": -0.3,
+				"rotation": 1,
+				"tag": "helico"
+				}
+            ]
+          
+        },
+			
+			
+			
+			
+			{
+			"name": "wait_second",
+			"value": 2
+		},
+		
+		
+		
+		
+		
+		
+		{
+				"name": "summon_entity_at_entity_relative",
+				"npc" : 
+					"Character.adelcaldos_grunt1_ranged1_nova_wa"
+				,
+				"x": 7,
+				"y": 0,
+				"z": 0,
+				"amount": 1,
+				"tag": "max01",
+				"entity":"helico",
+				"spawnlevel": 36
+			},
+			{
+				"name": "summon_entity_at_entity_relative",
+				"npc" : 
+					"Character.adelcaldos_grunt1_ranged1_nova_wa"
+				,
+				"x": 6,
+				"y": 0,
+				"z": 0,
+				"amount": 1,
+				"tag": "max02",
+				"entity": "helico",
+				"spawnlevel": 36
+			},
+			{
+				"name": "summon_entity_at_entity_relative",
+				"npc" : 
+					"Character.aldecaldos_grunt2_melee2__ma"
+				,
+				"x": 8,
+				"y": 0,
+			"z": 0,
+				"amount": 1,
+				"tag": "max03",
+				"entity": "helico",
+				"spawnlevel": 36
+			},
+			
+			
+			{
+				"name": "summon_entity_at_entity_relative",
+				"npc" : 
+					"Character.aldecaldos_grunt2_melee2__ma"
+				,
+				"x": 9,
+				"y": 0,
+				"z": 0,
+				"amount": 1,
+				"tag": "max04",
+				"entity": "helico",
+				"spawnlevel": 36
+			},
+		
+		
+		
+		
+		
+		
+		
+		
+		{
+			"name": "wait_second",
+			"value": 0.5
+		},
+		{
+			"name": "create_group",
+			"tag": "maxtacsquad"
+		},
+		{
+			"name": "set_entity_to_group",
+			"tag": "maxtacsquad",
+			"entities": [
+				"max01",
+				"max02",
+				"max03",
+				"max04"
+			]
+		},
+			
+			
+			
+			
+			
+			{
+			"name": "wait_second",
+			"value": 0.5
+		},
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		{
+			"name": "teleport_group_at_relative_position",
+			"x": 0,
+			"y": 0,
+			"z": 0,
+			"rotation": 1,
+			"tag": "maxtacsquad"
+		},
+		{
+			"name": "play_group_voice",
+			"voice": "danger",
+			"tag": "maxtacsquad"
+		},
+		{
+			"name": "wait_second",
+			"value": 1
+		},
+		{
+			"name": "attitude_group_against_group",
+			"attitude": "hostile",
+			"tag": "maxtacsquad",
+			"attitudegroup": "mq030_max_tac",
+			"attitudegrouptarget": "6thStreet",
+			"target": "gangteam"
+		},
+		{
+			"name": "attitude_group_against_group",
+			"attitude": "hostile",
+			"tag": "gangteam",
+			"attitudegroup": "6thStreet",
+			"attitudegrouptarget": "mq030_max_tac",
+			"target": "maxtacsquad"
+		},
+		{
+			"name": "wait_second",
+			"value": 0.1
+		},
+		{
+			"name": "wait_for_trigger",
+			"trigger": 
+			{
+				"name": "testFor",
+				"triggers": [
+					{
+						"name": "killed_group",
+						"tag": "maxtacsquad"
+					},
+					{
+						"name": "killed_group",
+						"tag": "gangteam"
+					}
+				],
+				"logic":"or"
+			}
+		},
+		
+		{
+			"name": "if",
+			"trigger": 
+				{
+						"name": "killed_group",
+						"tag": "maxtacsquad"
+				}
+			,
+			"if_action": 
+			[
+				{
+					"name": "gang_affinity",
+					"value": "faction_aldecaldos",
+					"score": -1
+				},
+				{
+					"name": "gang_affinity",
+					"value": "faction_wraith",
+					"score": 1
+				}
+			],
+			"else_action": 
+			[
+				{
+					"name": "gang_affinity",
+					"value": "faction_aldecaldos",
+					"score": 1
+				},
+				{
+					"name": "gang_affinity",
+					"value": "faction_wraith",
+					"score": -1
+				}
+			]		
+		},
+			
+			
+			
+		{
+			"name": "notify",
+			"value": "Aldelcaldos Ops finished"
+		},
+		{
+			"name": "wait_second",
+			"value": 1
+		},
+		
+		{
+				"name": "move_group_at_entity_relative_position",
+				"x": -5,
+				"y": 0,
+				"z": 0,
+				"rotation": 1,
+				"entity": "helico",
+				"tag": "maxtacsquad"
+			},
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			{
+				"name": "wait_second",
+				"value": 15
+			},
+			
+		
+		
+		{
+			"name": "despawn_group",
+			"tag": "gangteam"
+		},
+		{
+			"name": "despawn_group",
+			"tag": "maxtacsquad"
+		},
+		{
+			"name": "wait_second",
+			"value": 1
+		},
+		{
+			"name": "remove_group",
+			"tag": "gangteam"
+		},
+		{
+			"name": "remove_group",
+			"tag": "maxtacsquad"
+		},
+		{
+			"name": "wait_second",
+			"value": 1
+		},
+		{
+			"name": "wait_second",
+			"value": 0.1
+		},
+		{
+			"name": "teleport_entity_at_relative_position",
+			"x": 0,
+			"y": 0,
+			"z": 1.5,
+			"rotation": 1,
+			"tag": "helico"
+		},
+	{
+            "name": "for",
+            "amount": 210,
+            "action": [ 
+				{
+				"name": "teleport_entity_at_relative_position",
+				"x": 0,
+				"y": 0,
+				"z": 0.3,
+				"rotation": 1,
+				"tag": "helico"
+				}
+            ]
+          
+        },
+		{
+			"name": "despawn_entity",
+			"tag": "helico"
+		}
+	]
+}

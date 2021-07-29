@@ -1,0 +1,30 @@
+{
+    "EnterX": 0,
+    "posZ": 19.380599975586,
+    "requirement": [["auto"]],
+    "Zrange": 0,
+    "action": [],
+    "range": 10,
+    "coef": 0,
+    "trigger": {
+        "auto": {
+            "name": "auto",
+            "helper": "This trigger will be triggered without need anything (default)"
+        }
+    },
+    "price": 0,
+    "isbuyable": false,
+    "tag": "sexplace01",
+    "isrentable": false,
+    "rooms": [],
+    "EnterY": 0,
+    "rent": 0,
+    "posX": -657.77398681641,
+    "ExitX": 0,
+    "ExitY": 0,
+    "posY": 842.58941650391,
+    "type": 0,
+    "EnterZ": 0,
+    "name": "Jacked and Coke",
+    "ExitZ": 0
+}

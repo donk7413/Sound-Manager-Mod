@@ -1,0 +1,86 @@
+[{
+        "Desc": "nash_special01",
+        "speaker": {
+            "value": "q103_raffen_nash",
+            "way": "interact"
+        },
+        "Tag": "nash_special01",
+        "trigger": {
+			"condition01":{
+                "name": "auto"
+            }
+        },
+        "requirement":
+        [
+            ["condition01"]
+
+        ],
+        "options": [{
+                "Description": "nash_special01_01",
+                "action": [{
+                        "name": "dialog",
+                        "value": "nash_special02"
+                    }
+
+                ],
+                "trigger": {
+                    "auto": {
+                        "name": "auto"
+                    }
+                },
+                "requirement": [["auto"]]
+            }, {
+                "Description": "nash_special01_02",
+                "action": [{
+                        "name": "dialog",
+                        "value": "nash_special03"
+                    }
+
+                ],
+                "trigger": {
+                    "auto": {
+                        "name": "auto"
+                    }
+                },
+                "requirement": [["auto"]]
+            }
+        ]
+    }, {
+        "Desc": "nash_special02",
+        "speaker": {
+            "value": "q103_raffen_nash",
+            "way": "interact"
+        },
+        "Tag": "nash_special02",
+        
+		"trigger": {
+			"condition01":{
+                "name": "auto"
+            }
+        },
+        "requirement":
+        [
+            ["condition01"]
+
+        ],
+        "options": []
+    }, {
+        "Desc": "nash_special03",
+        "speaker": {
+            "value": "q103_raffen_nash",
+            "way": "interact"
+        },
+        "Tag": "nash_special03",
+       "trigger": {
+			"condition01":{
+                "name": "auto"
+            }
+        },
+        "requirement":
+        [
+            ["condition01"]
+
+        ],
+        "options": []
+    }
+]

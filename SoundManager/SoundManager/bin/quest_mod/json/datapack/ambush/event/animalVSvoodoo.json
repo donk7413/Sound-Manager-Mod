@@ -1,0 +1,318 @@
+{
+    "name": "animalvsvoodoo",
+    "tag": "animalvsvoodoo",
+	"way": "ambush",
+    "trigger": {
+        "trigger01": {
+            "name": "current_district",
+			"value":"Pacifica"
+        },
+		"trigger02": {
+            "name": "current_district",
+			"value":"CityCenter"
+        },
+		"trigger03": {
+           "name": "compare",
+			"trigger": {
+				"name": "player_inbuilding"
+			},
+			"expected": false
+        },
+		"trigger04": {
+            "name": "player_in_poi"
+        }
+    },
+    "requirement": [
+        [
+            "trigger01","trigger03"
+        ],
+		[
+            "trigger02","trigger03"
+        ]
+    ],
+    "action": [{
+            "name": "summon_entity_at_entity_relative",
+            "npc" : "Character.animals_bouncer1_melee1_fists_mb",
+			"entity":"player",
+            "x": -10,
+            "y": -10,
+            "z": 0,
+            "amount": 1,
+            "tag": "blue01",
+			"spawnlevel": 36
+
+        },
+		
+		{
+            "name": "summon_entity_at_entity_relative",
+			"entity":"player",
+            "npc" : "Character.animals_bouncer1_ranged1_kenshin_mb",
+            "x": -10,
+            "y": -9,
+            "z": 0,
+            "amount": 1,
+            "tag": "blue02",
+			"spawnlevel": 36
+
+        },
+		{
+            "name": "summon_entity_at_entity_relative",
+			"entity":"player",
+            "npc" : "Character.animals_bouncer1_melee1_fists_mb",
+            "x": -10,
+            "y": -8,
+            "z": 0,
+            "amount": 1,
+            "tag": "blue03",
+			"spawnlevel": 36
+
+        },{
+            "name": "summon_entity_at_entity_relative",
+			"entity":"player",
+            "npc" : "Character.animals_bouncer1_ranged1_kenshin_mb",
+            "x": -10,
+            "y": -7,
+            "z": 0,
+            "amount": 1,
+            "tag": "blue04",
+			"spawnlevel": 36
+
+        },	
+		{
+		
+			"name":"wait_second",
+			"value":0.5
+		
+		},
+		{
+            "name": "summon_entity_at_entity_relative",
+			"entity":"player",
+            "npc" : "Character.q110_esc_voodooboys_grunt1_ranged2_saratoga_ma",
+            "x": 10,
+            "y": 10,
+            "z": 0,
+            "amount": 1,
+            "tag": "red01",
+			"spawnlevel": 36
+
+        },
+		{
+            "name": "summon_entity_at_entity_relative",
+			"entity":"player",
+            "npc" : "Character.q110_esc_voodooboys_grunt1_ranged2_sidewinder_wa",
+            "x": 10,
+            "y": 9,
+            "z": 0,
+            "amount": 1,
+            "tag": "red02",
+			"spawnlevel": 36
+
+        },	
+		{
+            "name": "summon_entity_at_entity_relative",
+			"entity":"player",
+            "npc" : "Character.q110_esc_voodooboys_grunt1_ranged2_saratoga_ma",
+            "x": 10,
+            "y": 8,
+            "z": 0,
+            "amount": 1,
+            "tag": "red03",
+			"spawnlevel": 36
+
+        },	
+		{
+            "name": "summon_entity_at_entity_relative",
+			"entity":"player",
+            "npc" : "Character.q110_esc_voodooboys_grunt1_ranged2_sidewinder_wa",
+            "x": 10,
+            "y": 7,
+            "z": 0,
+            "amount": 1,
+            "tag": "red04",
+			"spawnlevel": 36
+			
+        },	
+		{
+		
+			"name":"wait_second",
+			"value":0.1
+		
+		},
+		
+		{
+            "name": "create_group",
+        
+            "tag": "animalteam"
+
+        },
+		{
+		
+			"name":"wait_second",
+			"value":1
+		
+		},
+		
+		{
+            "name": "create_group",
+        
+            "tag": "voodooteam"
+
+        },
+		{
+		
+			"name":"wait_second",
+			"value":1
+		
+		},
+		{
+            "name": "set_entity_to_group",
+              "tag": "animalteam",
+            "entities": ["blue01","blue02","blue03","blue04"]
+
+        },
+		{
+            "name": "set_entity_to_group",
+              "tag": "voodooteam",
+            "entities": ["red01","red02","red03","red04"]
+
+        },	
+		{
+		
+			"name":"wait_second",
+			"value":1
+		
+		},
+		
+		
+		{
+            "name": "move_group_at_relative_position",
+          
+            "tag": "animalteam",
+			"x": 5,
+            "y": 0,
+            "z": 0,
+            "rotation": 1,
+            "move": "Sprint"
+
+        },
+		{
+            "name": "move_group_at_relative_position",
+          
+            "tag": "voodooteam",
+			"x": -5,
+            "y": 0,
+            "z": 0,
+            "rotation": 1,
+            "move": "Sprint"
+
+        },	
+		{
+		
+			"name":"wait_second",
+			"value":1
+		
+		},
+		
+		
+		{
+            "name": "look_at_entity_group",
+          
+            "tag": "voodooteam",
+			"entity":"blue01"
+
+        },
+		{
+            "name": "look_at_entity_group",
+          
+            "tag": "animalteam",
+			"entity":"red01"
+
+        },
+		{
+		
+			"name":"wait_second",
+			"value":1
+		
+		},
+		
+		
+	
+		
+		
+		{
+            "name": "attitude_group_against_group",
+			"attitude":"hostile",
+            "tag": "voodooteam",
+			"attitudegroup":"voodooBoys",
+			"attitudegrouptarget":"animals",
+			"target":"animalteam"
+
+        },
+		{
+            "name": "attitude_group_against_group",
+			"attitude":"hostile",
+            "tag": "animalteam",
+			"attitudegroup":"animals",
+			"attitudegrouptarget":"voodooBoys",
+			"target":"voodooteam"
+
+        },
+		{	
+		"name":"wait_for_trigger",
+		"trigger": 
+		{
+			"name": "testFor",
+			"triggers": [
+				{
+					"name": "killed_group",
+					"tag": "animalteam"
+				},
+				{
+					"name": "killed_group",
+					"tag": "voodooteam"
+				}
+			],
+			"logic": "or",
+			"helper": "This trigger will be triggered when all of the trigger are triggered by the logic you choose."
+		}
+		
+	},
+		{
+			"name": "if",
+			"trigger": {
+				"name": "killed_group",
+				"tag": "animalteam"
+			},
+			"if_action": [{
+				"name": "gang_affinity",
+				"score": 0.5,
+				"value": "faction_voodooboys"
+			}],			
+			"else_action": [{
+					"name": "gang_affinity",
+					"score": 0.5,
+					"value": "faction_animals"
+				}]		
+		},
+		{
+			"name": "despawn_group",
+			"tag": "voodooteam"
+		},
+		{
+			"name": "despawn_group",
+			"tag": "animalteam"
+		},
+		{
+			"name": "wait_second",
+			"value": 1
+		},
+		{
+			"name": "remove_group",
+			"tag": "voodooteam"
+		},
+		{
+			"name": "remove_group",
+			"tag": "animalteam"
+		}
+    ]
+}

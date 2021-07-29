@@ -1,0 +1,11 @@
+{
+
+	"Name":"Wraith",
+	
+	"Tag": "faction_wraith",
+	"AttitudeGroup":["wraiths"],
+	"Rivals":["faction_aldecaldos"],
+	"SpawnableNPC":["Character.wraiths_grunt2_ranged2_copperhead_ma","Character.wraiths_grunt2_melee2_crowbar_wa"],
+	"SpawnableVehicule":["Vehicle.v_sport2_quadra_type66_nomad_wraith"],
+	"DistrictTag":"district_badland"
+}

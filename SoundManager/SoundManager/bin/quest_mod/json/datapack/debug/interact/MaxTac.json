@@ -1,0 +1,24 @@
+{
+	"name": "Test MaxTac Intervention",
+	"tag": "maxtacTest",
+	"display": "event_interact",
+	"timer": 0,
+	"sorttag": "0",
+	"trigger": {
+		"trigger01": {
+			"name": "debug"
+		}
+	},
+	"requirement": [
+		[
+			"trigger01"
+		]
+	],
+	"action": [
+		{
+			"name": "do_event",
+			"value": "maxtac010",
+			"bypass":true
+		}
+	]
+}

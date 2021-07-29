@@ -1,0 +1,37 @@
+{
+	"name": "Save Victim",
+	"tag": "savevictim",
+	"display": "event_interact",
+	"timer": 0,
+	"sorttag": "0",
+	"trigger": {
+		"victimisdead": {
+				
+				
+		"name": "custom_condition",
+		"value": "trauma_victim_unconscious",
+		"score": 1
+	
+						
+		},
+		"victimisactive":{
+			"name":"entity_is_spawn",
+			"tag":"victim"
+		}
+	},
+	"requirement": [
+		[
+			"victimisdead","victimisactive"
+		]
+	],
+	"action": [
+		
+		
+		{
+		"name": "change_custom_condition",
+		"value": "trauma_victim_unconscious",
+		"score": 2
+		}
+		
+	]
+}

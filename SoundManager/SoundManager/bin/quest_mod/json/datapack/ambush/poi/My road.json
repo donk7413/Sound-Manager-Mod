@@ -1,0 +1,14 @@
+{
+    "desc": "My road",
+    "locations": [{
+            "x": -1229.7606201172,
+            "subdistrict": "Kabuki",
+            "inVehicule": false,
+            "y": 1627.0028076172,
+            "district": "Watson",
+            "z": 23.008689880371,
+            "Tag": "district_watson"
+        }
+    ],
+    "isFor": 3
+}

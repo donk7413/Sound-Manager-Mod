@@ -1,0 +1,11 @@
+{
+
+	"Name":"6thStreet",
+
+	"Tag": "faction_sixthstreet",
+	"AttitudeGroup":["6thStreet","6thstreet"],
+	"Rivals":["faction_valentinos"],
+	"SpawnableNPC":["Character.sts_hey_gle_06_6th_street_smg_ma","Character.sts_hey_gle_06_6th_street_smg_wa"],
+	"SpawnableVehicule":["Vehicle.cs_savable_archer_hella_sixth_street"],
+	"DistrictTag":"district_santodomingo"
+}

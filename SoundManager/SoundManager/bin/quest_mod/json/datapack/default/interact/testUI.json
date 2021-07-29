@@ -1,0 +1,28 @@
+{
+	"name": "Test Interface",
+	"tag": "testui",
+	"timer":0,
+	"sorttag":"UI",
+	"display":"event_interact",
+	"trigger": {
+		"auto": {
+            "name": "auto"
+		}
+		
+	},
+	"requirement": [
+		[
+			"auto"
+		]
+	],
+	"action": 	[
+		
+		{
+		"name": "open_interface",
+		"tag": "helloworld"
+		
+		}
+	
+		
+	]
+}

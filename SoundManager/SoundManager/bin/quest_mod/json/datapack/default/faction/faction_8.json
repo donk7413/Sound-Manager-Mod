@@ -1,0 +1,11 @@
+{
+
+	"Name":"Maelstrom",
+
+	"Tag": "faction_maelstrom",
+	"AttitudeGroup":["maelstrom"],
+	"Rivals":["faction_scavenger"],
+	"SpawnableNPC":["Character.maelstrom_grunt2_melee2_machete_ma","Character.maelstrom_grunt2_ranged2_ajax_wa"],
+	"SpawnableVehicule":["Vehicle.v_standard2_chevalier_thrax_maelstrom"],
+	"DistrictTag":"district_watson"
+}

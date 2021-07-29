@@ -1,0 +1,6 @@
+0 = drink basic
+1 = drink alcohol
+2 = eat snack
+3 = eat meal
+4 = buy
+5 = do

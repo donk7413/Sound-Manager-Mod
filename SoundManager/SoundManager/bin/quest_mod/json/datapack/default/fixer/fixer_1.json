@@ -1,0 +1,19 @@
+{
+
+	"Name":"Wakako Okada",
+	"LOC_X":-668,
+	"LOC_Y":822,
+	"LOC_Z":0,
+	"Faction":"faction_tygerclaws",
+	"Tag": "fixer_wakako",
+	"NPCId":11434,
+	"exist":true,
+	"npcexist":true,
+	"trigger":{
+		"always_enable":{
+			"name":"auto"
+		}
+	},
+	"requirement":[["always_enable"]],
+	"action":[]
+}

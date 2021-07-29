@@ -1,0 +1,11 @@
+{
+
+	"Name":"Valentinos",
+	
+	"Tag": "faction_valentinos",
+	"AttitudeGroup":["valentinos"],
+	"Rivals":["faction_sixthstreet"],
+	"SpawnableNPC":["Character.gle_valentinos_grunt1_ranged1_nova_ma","Character.gle_valentinos_grunt2_melee2_machete_wa"],
+	"SpawnableVehicule":["Vehicle.v_sport2_villefort_alvarado_valentinos"],
+	"DistrictTag":"district_heywood"
+}

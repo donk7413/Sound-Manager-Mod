@@ -1,0 +1,202 @@
+{
+	"title": "Test Kill Mappin system",
+	"content": "Go Near from Badlands_NorthSunriseOilField (Badlands District) and kill the enemies (4 enemies) . Your fixer is Dakota",
+	"tag": "kill_2208974",
+	"trigger_condition": {
+		"trigger": {
+			"name": "npc",
+			"value": "fixer_dakota",
+			"way": "fixer"
+		}
+	},
+	"trigger_condition_requirement": [
+		[
+			"trigger"
+		]
+	],
+	"trigger_action": [
+		{
+			"name": "notify",
+			"value": "Starting contract : Kill Contract N°2208974"
+		},
+		{
+			"name": "draw_3Dmappin",
+			"x": -1846.0,
+			"y": 3569.0,
+			"z": 8.0
+		}
+	],
+	"start_condition": {
+		"trigger": {
+			"name": "position",
+			"x": -1846.0,
+			"y": 3569.0,
+			"z": 8.0,
+			"range": 10
+		}
+	},
+	"start_condition_requirement": [
+		[
+			"trigger"
+		]
+	],
+	"start_action": [
+		{
+			"name": "notify",
+			"value": "Enenmies is near from you !"
+		},
+		{
+			"name": "create_group",
+			"tag": "kill_2208974"
+		},
+		{
+			"name": "change_quest_content",
+			"value": "kill 4 enemies"
+		},
+		{
+			"name": "delete_mappin"
+		},
+		{
+			"name": "summon_entity_at_entity_relative",
+			"entity": "player",
+			"tag": "kill_mission_0",
+			"npc": "Character.aldecaldos_grunt2_melee2__ma",
+			"group": "kill_2208974",
+			"spawnlevel": "42",
+			"x": -5,
+			"y": -5,
+			"z": 0
+		},
+		{
+			"name": "summon_entity_at_entity_relative",
+			"entity": "player",
+			"tag": "kill_mission_1",
+			"npc": "Character.adelcaldos_grunt1_ranged1_nova_wa",
+			"group": "kill_2208974",
+			"spawnlevel": "42",
+			"x": -4,
+			"y": -5,
+			"z": 0
+		},
+		{
+			"name": "summon_entity_at_entity_relative",
+			"entity": "player",
+			"tag": "kill_mission_2",
+			"npc": "Character.aldecaldos_grunt2_melee2__ma",
+			"group": "kill_2208974",
+			"spawnlevel": "42",
+			"x": -3,
+			"y": -5,
+			"z": 0
+		},
+		{
+			"name": "summon_entity_at_entity_relative",
+			"entity": "player",
+			"tag": "kill_mission_3",
+			"npc": "Character.aldecaldos_grunt2_melee2__ma",
+			"group": "kill_2208974",
+			"spawnlevel": "42",
+			"x": -2,
+			"y": -5,
+			"z": 0
+		},
+		{
+			"name": "wait_second",
+			"value": 3
+		},
+		{
+			"name": "new_map_point_to_group",
+			"group": "kill_2208974",
+			"typemap": "FastTravelVariant",
+			"wall": true,
+			"active": false,
+			"mapgroup": "kill_2208974"
+		},
+		{
+			"name": "attitude_group_against_entity",
+			"entity": "player",
+			"tag": "kill_2208974",
+			"attitude": "hostile"
+		}
+	],
+	"end_condition": {
+		"trigger": {
+			"name": "killed_group",
+			"tag": "kill_2208974"
+		}
+	},
+	"end_condition_requirement": [
+		[
+			"trigger"
+		]
+	],
+	"end_action": [
+		{
+			"name": "notify",
+			"value": "Execution Finished !"
+		},
+		{
+			"name": "give_money",
+			"value": 603
+		},
+		{
+			"name": "delete_map_group",
+			"mapgroup": "kill_2208974"
+		},
+		{
+			"name": "despawn_group",
+			"tag": "kill_2208974"
+		},
+		{
+			"name": "remove_group",
+			"tag": "kill_2208974"
+		},
+		{
+			"name": "gang_affinity",
+			"score": -1,
+			"value": "faction_aldecaldos"
+		},
+		{
+			"name": "gang_affinity",
+			"score": 1,
+			"value": "faction_wraith"
+		}
+	],
+	"failure_condition": {
+		"trigger": {
+			"name": "player_death"
+		}
+	},
+	"failure_condition_requirement": [
+		[
+			"trigger"
+		]
+	],
+	"failure_action": [
+		{
+			"name": "notify",
+			"value": "You failed !"
+		},
+		{
+			"name": "delete_mappin"
+		},
+		{
+			"name": "despawn_group",
+			"tag": "kill_2208974"
+		},
+		{
+			"name": "remove_group",
+			"tag": "kill_2208974"
+		},
+		{
+			"name": "gang_affinity",
+			"score": 1,
+			"value": "faction_aldecaldos"
+		},
+		{
+			"name": "gang_affinity",
+			"score": -1,
+			"value": "faction_wraith"
+		}
+	]
+}

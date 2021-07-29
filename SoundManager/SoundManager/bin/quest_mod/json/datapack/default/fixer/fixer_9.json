@@ -1,0 +1,19 @@
+{
+
+	"Name":"Patricia",
+	"LOC_X":-1730,
+	"LOC_Y":2185,
+	"LOC_Z":86,
+	"Faction":"faction_maelstrom",
+	"Tag": "fixer_patricia",
+	"exist":false,
+	"npcexist":false,
+	"NPCId":9805,
+	"trigger":{
+		"always_enable":{
+			"name":"auto"
+		}
+	},
+	"requirement":[["always_enable"]],
+	"action":[]
+}

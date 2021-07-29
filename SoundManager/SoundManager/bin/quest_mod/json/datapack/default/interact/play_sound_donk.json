@@ -1,0 +1,24 @@
+{
+    "name": "play_sound_donk",
+    "trigger": {
+        "ss": {
+            "name": "auto",
+            "helper": "This trigger will be triggered without need anything (default)"
+        }
+    },
+    "display": "event_interact",
+    "tag": "play_sound_donk",
+    "requirement": [],
+    "action": [{
+            "channel": "music",
+            "value": "sunset.mp3",
+            "help": "Use Sound Manager Mod to play a sound file in the channel (sound, music or env)",
+            "name": "play_sound_file",
+            "datapack":"music",
+            "helper": "This action will Use Sound Manager Mod to play a sound file in the channel (sound, music or env) ",
+			"volume":100
+        }
+    ],
+    "timer": 0,
+    "sorttag": ""
+}

@@ -1,0 +1,101 @@
+{
+	"name": "HO OH bar",
+	"tag": "hoohbar",
+	"posX": -1034,
+	"posY": 1351,
+	"posZ": 5,
+	"range":10,
+	"EnterX": 0,
+	"EnterY": 0,
+	"EnterZ": 0,
+	"ExitX": 0,
+	"ExitY": 0,
+	"ExitZ": 0,
+	"isbuyable": false,
+	"price":500000,
+	"isrentable": false,
+	"rent":100,
+	"type": 1,
+	"coef": 2,
+	"rooms": [
+		{
+			"posX": -1034,
+			"posY": 1351,
+			"posZ": 5,
+			"name": "Bar",
+			"range":3,
+			"tag": "hoohbarbar",
+			"type": [
+				0
+			],
+			"trigger": {
+				"always_enable": {
+					"name": "auto"
+				}
+			},
+			"requirement": [
+				[
+					"always_enable"
+				]
+			],
+			"action": []
+		},
+		{
+			"posX": -1044,
+			"posY": 1348,
+			"posZ": 5,
+			"name": "Playground",
+			"range":5,
+			"tag": "hoohbarplay",
+			"type": [
+				2
+			],
+			"trigger": {
+				"always_enable": {
+					"name": "auto"
+				}
+			},
+			"requirement": [
+				[
+					"always_enable"
+				]
+			],
+			"action": []
+		},
+		{
+			"posX": -1033,
+			"posY": 1351,
+			"posZ": 9,
+			"name": "2nd",
+			"range":3,
+			"tag": "hoohbar2nd",
+			"type": [
+				0,
+				1,
+				2
+			],
+			"trigger": {
+				"always_enable": {
+					"name": "auto"
+				}
+			},
+			"requirement": [
+				[
+					"always_enable"
+				]
+			],
+			"action": []
+		}
+	],
+	"trigger": {
+		"always_enable": {
+			"name": "auto"
+		}
+	},
+	"requirement": [
+		[
+			"always_enable"
+		]
+	],
+	"action": []
+}

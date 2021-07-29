@@ -1,0 +1,341 @@
+{
+    "name": "scavvsmaeal",
+    "tag": "scavvsmaeal",
+	"way": "ambush",
+    "trigger": {
+        "trigger01": {
+            "name": "current_district",
+			"value":"Watson"
+		},
+		
+		"trigger02": {
+            "name": "current_district",
+			"value":"CityCenter"
+		},
+		"trigger03": {
+			"name": "compare",
+			"trigger": {
+				"name": "player_inbuilding"
+			},
+			"expected": false
+		},
+		"trigger04": {
+            "name": "player_in_poi"
+		},
+		
+		
+		
+		
+		"trigger05": {
+            "name": "current_subdistrict",
+			"value":"ArasakaWaterfront"
+		},
+		
+		
+		
+		"trigger06": {
+            "name": "current_subdistrict",
+			"value":"Northside"
+		}
+	},
+    "requirement": [
+        [
+            "trigger01","trigger03","trigger05"
+		],
+		
+		[
+            "trigger01","trigger03","trigger06"
+		],
+		[
+            "trigger02","trigger03"
+		]
+	],
+    "action": [{
+		"name": "summon_entity_at_entity_relative","entity":"player",
+		"npc" : "Character.scavenger_grunt2_ranged2_copperhead_ma",
+		"x": -10,
+		"y": -10,
+		"z": 0,
+		"amount": 1,
+		"tag": "blue01",
+		"spawnlevel": 36
+		
+	},
+	
+	{
+		"name": "summon_entity_at_entity_relative","entity":"player",
+		"npc" : "Character.scavenger_grunt2_ranged2_copperhead_ma",
+		"x": -10,
+		"y": -9,
+		"z": 0,
+		"amount": 1,
+		"tag": "blue02",
+		"spawnlevel": 36
+		
+	},
+	{
+		"name": "summon_entity_at_entity_relative","entity":"player",
+		"npc" : "Character.scavenger_grunt2_melee2_pipewrench_wa",
+		"x": -10,
+		"y": -8,
+		"z": 0,
+		"amount": 1,
+		"tag": "blue03",
+		"spawnlevel": 36
+		
+        },{
+		"name": "summon_entity_at_entity_relative","entity":"player",
+		"npc" : "Character.scavenger_grunt2_melee2_pipewrench_wa",
+		"x": -10,
+		"y": -7,
+		"z": 0,
+		"amount": 1,
+		"tag": "blue04",
+		"spawnlevel": 36
+		
+	},	
+	{
+		
+		"name":"wait_second",
+		"value":0.5
+		
+	},
+	{
+		"name": "summon_entity_at_entity_relative","entity":"player",
+		"npc" : "Character.maelstrom_grunt2_melee2_machete_ma",
+		"x": 10,
+		"y": 10,
+		"z": 0,
+		"amount": 1,
+		"tag": "red01",
+		"spawnlevel": 36
+		
+	},
+	{
+		"name": "summon_entity_at_entity_relative","entity":"player",
+		"npc" : "Character.maelstrom_grunt2_melee2_machete_ma",
+		"x": 10,
+		"y": 9,
+		"z": 0,
+		"amount": 1,
+		"tag": "red02",
+		"spawnlevel": 36
+		
+	},	
+	{
+		"name": "summon_entity_at_entity_relative","entity":"player",
+		"npc" : "Character.maelstrom_grunt2_ranged2_ajax_wa",
+		"x": 10,
+		"y": 8,
+		"z": 0,
+		"amount": 1,
+		"tag": "red03",
+		"spawnlevel": 36
+		
+	},	
+	{
+		"name": "summon_entity_at_entity_relative","entity":"player",
+		"npc" : "Character.maelstrom_grunt2_ranged2_ajax_wa",
+		"x": 10,
+		"y": 7,
+		"z": 0,
+		"amount": 1,
+		"tag": "red04",
+		"spawnlevel": 36
+		
+	},	
+	{
+		
+		"name":"wait_second",
+		"value":0.1
+		
+	},
+	
+	{
+		"name": "create_group",
+        
+		"tag": "scavteam"
+		
+	},
+	{
+		
+		"name":"wait_second",
+		"value":1
+		
+	},
+	
+	{
+		"name": "create_group",
+        
+		"tag": "maelteam"
+		
+	},
+	{
+		
+		"name":"wait_second",
+		"value":1
+		
+	},
+	{
+		"name": "set_entity_to_group",
+		"tag": "scavteam",
+		"entities": ["blue01","blue02","blue03","blue04"]
+		
+	},
+	{
+		"name": "set_entity_to_group",
+		"tag": "maelteam",
+		"entities": ["red01","red02","red03","red04"]
+		
+	},	
+	{
+		
+		"name":"wait_second",
+		"value":1
+		
+	},
+	
+	
+	{
+		"name": "move_group_at_relative_position",
+		
+		"tag": "scavteam",
+		"x": 5,
+		"y": 0,
+		"z": 0,
+		"rotation": 1,
+		"move": "Sprint"
+		
+	},
+	{
+		"name": "move_group_at_relative_position",
+		
+		"tag": "maelteam",
+		"x": -5,
+		"y": 0,
+		"z": 0,
+		"rotation": 1,
+		"move": "Sprint"
+		
+	},	
+	{
+		
+		"name":"wait_second",
+		"value":1
+		
+	},
+	
+	
+	{
+		"name": "look_at_entity_group",
+		
+		"tag": "maelteam",
+		"entity":"blue01"
+		
+	},
+	{
+		"name": "look_at_entity_group",
+		
+		"tag": "scavteam",
+		"entity":"red01"
+		
+	},
+	{
+		
+		"name":"wait_second",
+		"value":1
+		
+	},
+	
+	
+	
+	
+	
+	{
+		"name": "attitude_group_against_group",
+		"attitude":"hostile",
+		"tag": "maelteam",
+		"attitudegroup":"maelstrom",
+		"attitudegrouptarget":"scavenger",
+		"target":"scavteam"
+		
+	},
+	{
+		"name": "attitude_group_against_group",
+		"attitude":"hostile",
+		"tag": "scavteam",
+		"attitudegroup":"scavenger",
+		"attitudegrouptarget":"maelstrom",
+		"target":"maelteam"
+		
+	},
+	
+	{
+		"name": "wait_second",
+		"value": 1
+	},
+	{	
+		"name":"wait_for_trigger",
+		"trigger": 
+		{
+			"name": "testFor",
+			"triggers": [
+				{
+					"name": "killed_group",
+					"tag": "maelteam"
+				},
+				{
+					"name": "killed_group",
+					"tag": "scavteam"
+				}
+			],
+			"logic": "or",
+			"helper": "This trigger will be triggered when all of the trigger are triggered by the logic you choose."
+		}
+		
+	},
+	
+	
+	
+	
+	
+	{
+		"name": "if",
+		"trigger": {
+			"name": "killed_group",
+			"tag": "maelteam"
+		},
+		"if_action": [{
+			"name": "gang_affinity",
+			"score": 0.5,
+			"value": "faction_scavenger"
+			}],			
+			"else_action": [{
+					"name": "gang_affinity",
+					"score": 0.5,
+					"value": "faction_maelstrom"
+				}]		
+		},
+		{
+			"name": "despawn_group",
+			"tag": "maelteam"
+		},
+		{
+			"name": "despawn_group",
+			"tag": "scavteam"
+		},
+		{
+			"name": "wait_second",
+			"value": 1
+		},
+		{
+			"name": "remove_group",
+			"tag": "maelteam"
+		},
+		{
+		"name": "remove_group",
+		"tag": "scavteam"
+		}
+		]
+		}
+				

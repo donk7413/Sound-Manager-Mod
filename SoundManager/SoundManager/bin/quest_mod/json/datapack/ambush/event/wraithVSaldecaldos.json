@@ -1,0 +1,307 @@
+{
+    "name": "wraithvsalde",
+    "tag": "wraithvsalde",
+	"way": "ambush",
+    "trigger": {
+        "trigger01": {
+            "name": "current_district",
+			"value":"Badlands"
+		},
+		"trigger03": {
+			"name": "compare",
+			"trigger": {
+				"name": "player_inbuilding"
+			},
+			"expected": false
+		},
+		"trigger04": {
+            "name": "player_in_poi"
+		}
+	},
+    "requirement": [
+        [
+            "trigger01","trigger03"
+		]
+	],
+    "action": [{
+		"name": "summon_entity_at_entity_relative","entity":"player",
+		"npc": "Character.wraiths_grunt2_ranged2_copperhead_ma",
+		"x": -10,
+		"y": -10,
+		"z": 0,
+		"amount": 1,
+		"tag": "blue01",
+		"spawnlevel": 36
+		
+	},
+	
+	{
+		"name": "summon_entity_at_entity_relative","entity":"player",
+		"npc" : "Character.wraiths_grunt2_ranged2_copperhead_ma",
+		"x": -10,
+		"y": -9,
+		"z": 0,
+		"amount": 1,
+		"tag": "blue02",
+		"spawnlevel": 36
+		
+	},
+	{
+		"name": "summon_entity_at_entity_relative","entity":"player",
+		"npc" : "Character.wraiths_grunt2_ranged2_copperhead_ma",
+		"x": -10,
+		"y": -8,
+		"z": 0,
+		"amount": 1,
+		"tag": "blue03",
+		"spawnlevel": 36
+		
+        },{
+		"name": "summon_entity_at_entity_relative","entity":"player",
+		"npc" : "Character.wraiths_grunt2_melee2_crowbar_wa",
+		"x": -10,
+		"y": -7,
+		"z": 0,
+		"amount": 1,
+		"tag": "blue04",
+		"spawnlevel": 36
+		
+	},	
+	{
+		
+		"name":"wait_second",
+		"value":0.5
+		
+	},
+	{
+		"name": "summon_entity_at_entity_relative","entity":"player",
+		"npc" : "Character.adelcaldos_grunt1_ranged1_nova_wa",
+		"x": 10,
+		"y": 10,
+		"z": 0,
+		"amount": 1,
+		"tag": "red01",
+		"spawnlevel": 36
+		
+	},
+	{
+		"name": "summon_entity_at_entity_relative","entity":"player",
+		"npc" : "Character.adelcaldos_grunt1_ranged1_nova_wa",
+		"x": 10,
+		"y": 9,
+		"z": 0,
+		"amount": 1,
+		"tag": "red02",
+		"spawnlevel": 36
+		
+	},	
+	{
+		"name": "summon_entity_at_entity_relative","entity":"player",
+		"npc" : "Character.aldecaldos_grunt2_melee2__ma",
+		"x": 10,
+		"y": 8,
+		"z": 0,
+		"amount": 1,
+		"tag": "red03",
+		"spawnlevel": 36
+		
+	},	
+	{
+		"name": "summon_entity_at_entity_relative","entity":"player",
+		"npc" : "Character.aldecaldos_grunt2_melee2__ma",
+		"x": 10,
+		"y": 7,
+		"z": 0,
+		"amount": 1,
+		"tag": "red04",
+		"spawnlevel": 36
+		
+	},	
+	{
+		
+		"name":"wait_second",
+		"value":0.1
+		
+	},
+	
+	{
+		"name": "create_group",
+        
+		"tag": "wraithteam"
+		
+	},
+	{
+		
+		"name":"wait_second",
+		"value":1
+		
+	},
+	
+	{
+		"name": "create_group",
+        
+		"tag": "aldteam"
+		
+	},
+	{
+		
+		"name":"wait_second",
+		"value":1
+		
+	},
+	{
+		"name": "set_entity_to_group",
+		"tag": "wraithteam",
+		"entities": ["blue01","blue02","blue03","blue04"]
+		
+	},
+	{
+		"name": "set_entity_to_group",
+		"tag": "aldteam",
+		"entities": ["red01","red02","red03","red04"]
+		
+	},	
+	{
+		
+		"name":"wait_second",
+		"value":1
+		
+	},
+	
+	
+	{
+		"name": "move_group_at_relative_position",
+		
+		"tag": "wraithteam",
+		"x": 5,
+		"y": 0,
+		"z": 0,
+		"rotation": 1,
+		"move": "Sprint"
+		
+	},
+	{
+		"name": "move_group_at_relative_position",
+		
+		"tag": "aldteam",
+		"x": -5,
+		"y": 0,
+		"z": 0,
+		"rotation": 1,
+		"move": "Sprint"
+		
+	},	
+	{
+		
+		"name":"wait_second",
+		"value":1
+		
+	},
+	
+	
+	{
+		"name": "look_at_entity_group",
+		
+		"tag": "aldteam",
+		"entity":"blue01"
+		
+	},
+	{
+		"name": "look_at_entity_group",
+		
+		"tag": "wraithteam",
+		"entity":"red01"
+		
+	},
+	{
+		
+		"name":"wait_second",
+		"value":1
+		
+	},
+	
+	
+	
+	
+	
+	{
+		"name": "attitude_group_against_group",
+		"attitude":"hostile",
+		"tag": "aldteam",
+		"attitudegroup":"aldecaldos",
+		"attitudegrouptarget":"wraiths",
+		"target":"wraithteam"
+		
+	},
+	{
+		"name": "attitude_group_against_group",
+		"attitude":"hostile",
+		"tag": "wraithteam",
+		"attitudegroup":"wraiths",
+		"attitudegrouptarget":"aldecaldos",
+		"target":"aldteam"
+		
+	},
+	
+	
+	{	
+		"name":"wait_for_trigger",
+		"trigger": 
+		{
+			"name": "testFor",
+			"triggers": [
+				{
+					"name": "killed_group",
+					"tag": "aldteam"
+				},
+				{
+					"name": "killed_group",
+					"tag": "wraithteam"
+				}
+			],
+			"logic": "or",
+			"helper": "This trigger will be triggered when all of the trigger are triggered by the logic you choose."
+		}
+		
+	},
+	{
+		"name": "if",
+		"trigger": {
+			"name": "killed_group",
+			"tag": "wraithteam"
+		},
+		"if_action": [{
+			"name": "gang_affinity",
+			"score": 0.5,
+			"value": "faction_aldecaldos"
+		}],			
+		"else_action": [{
+			"name": "gang_affinity",
+			"score": 0.5,
+			"value": "faction_wraith"
+		}
+		]
+	},
+	{
+		"name": "despawn_group",
+		"tag": "wraithteam"
+	},
+	{
+		"name": "despawn_group",
+		"tag": "aldteam"
+	},
+	{
+		"name": "wait_second",
+		"value": 1
+	},
+	{
+		"name": "remove_group",
+	"tag": "wraithteam"
+	},
+	{
+	"name": "remove_group",
+	"tag": "aldteam"
+	}
+    ]
+	}
+		

@@ -1,0 +1,57 @@
+{
+	"name": "Tom's Diner",
+	"tag": "tomdiner",
+	"posX": -1167,
+	"posY": 1751,
+	"posZ": 23,
+	"range":6,
+	"EnterX": 0,
+	"EnterY": 0,
+	"EnterZ": 0,
+	"ExitX": 0,
+	"ExitY": 0,
+	"ExitZ": 0,
+	"isbuyable": false,
+	"price":200000,
+	"isrentable": false,
+	"rent":20,
+	"type": 3,
+	"coef": 2,
+	
+	"rooms": [
+		{
+			"posX": -1168,
+			"posY": 1753,
+			"posZ": 23,
+			"name": "Bar",
+			"range":2,
+			"tag": "tomdinnerbar",
+			"type": [
+				1,
+				2
+			],
+			"trigger": {
+				"always_enable": {
+					"name": "auto"
+				}
+			},
+			"requirement": [
+				[
+					"always_enable"
+				]
+			],
+			"action": []
+		}
+	],
+	"trigger": {
+		"always_enable": {
+			"name": "auto"
+		}
+	},
+	"requirement": [
+		[
+			"always_enable"
+		]
+	],
+	"action": []
+}

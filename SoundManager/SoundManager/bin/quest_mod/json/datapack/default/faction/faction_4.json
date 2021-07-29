@@ -1,0 +1,11 @@
+{
+
+	"Name":"Mox",
+	
+	"Tag": "faction_mox",
+	"AttitudeGroup":["mox"],
+	"Rivals":["faction_tygerclaws"],
+	"SpawnableNPC":["Character.the_mox_elite3_fmelee3_mantis_wa_elite","Character.the_mox_elite2_fmelee2_machete_wa_rare"],
+	"SpawnableVehicule":["Vehicle.v_sport2_villefort_alvarado_mox"],
+	"DistrictTag":"district_watson"
+}

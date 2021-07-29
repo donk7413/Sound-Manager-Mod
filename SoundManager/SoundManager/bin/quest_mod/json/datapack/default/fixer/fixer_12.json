@@ -1,0 +1,19 @@
+{
+
+	"Name":"Delamain",
+	"LOC_X":0,
+	"LOC_Y":0,
+	"LOC_Z":0,
+	"Faction":"faction_delamain",
+	"Tag": "fixer_delamain",
+	"exist":true,
+	"npcexist":true,
+	"NPCId":466,
+	"trigger":{
+		"always_enable":{
+			"name":"auto"
+		}
+	},
+	"requirement":[["always_enable"]],
+	"action":[]
+}

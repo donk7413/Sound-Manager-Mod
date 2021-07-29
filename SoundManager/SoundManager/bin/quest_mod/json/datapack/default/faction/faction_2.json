@@ -1,0 +1,11 @@
+{
+
+	"Name":"TygerClaws",
+	
+	"Tag": "faction_tygerclaws",
+	"AttitudeGroup":["tygerClaws","tyger"],
+	"Rivals":["faction_mox"],
+	"SpawnableNPC":["Character.mq035_tyger_claw_01","Character.mq035_tyger_claw_02"],
+	"SpawnableVehicule":["Vehicle.v_standard25_villefort_columbus_tyger"],
+	"DistrictTag":"district_westbrook"
+}

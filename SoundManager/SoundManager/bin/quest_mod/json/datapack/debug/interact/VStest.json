@@ -1,0 +1,26 @@
+{
+	"name": "Test Vs",
+	"tag": "testVS",
+	"display": "event_interact",
+	"timer": 0,
+	"sorttag": "0",
+	"trigger": {
+		"trigger01": {
+			"name": "debug"
+		}
+	},
+	"requirement": [
+		[
+			"trigger01"
+		]
+	],
+	"action": [
+		
+			{
+		
+			"name":"do_random_event",
+			"events": ["animalvsvoodoo","scavvsmaeal","wraithvsalde","moxvstyger","6thstreetvsvalentinos"],
+			"bypass":true
+		}
+	]
+}

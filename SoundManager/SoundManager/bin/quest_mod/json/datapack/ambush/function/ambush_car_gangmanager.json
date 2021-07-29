@@ -1,0 +1,147 @@
+{
+    "name": "ambush_car_gangmanager",
+    "tag": "ambush_car_gangmanager",
+    "action": [
+		{
+			"name": "if",
+			"trigger": {
+				"name": "current_district",
+				"value": "Badlands"
+			},
+			"if_action": [{
+				"name": "do_random_function",
+				"funcs": ["ambush_car_wraith","ambush_car_aldelcados"]
+			}],
+			"else_action": [{
+				"name":"nothing"
+			}]
+		},
+		
+		{
+			"name": "if",
+			"trigger": {
+				"name": "current_district",
+				"value": "CityCenter"
+			},
+			"if_action": [{
+				
+				"name": "do_random_function",
+				"funcs":  ["ambush_car_animal","ambush_car_scavenger"]
+			}],
+			"else_action": [{
+				"name":"nothing"
+			}]
+		},
+		
+		{
+			"name": "if",
+			"trigger": {
+				"name": "current_district",
+				"value": "Heywood"
+			},
+			"if_action": [{
+				"name": "do_function",
+				"value": "ambush_car_valentinos"
+			}],
+			"else_action": [{
+				"name":"nothing"
+			}]
+		},
+		
+	
+		
+		
+		{
+			"name": "if",
+			"trigger": {
+				"name": "current_district",
+				"value": "Pacifica"
+			},
+			"if_action": [{
+				"name": "do_function",
+				"value": "ambush_car_voodoo"
+			}],
+			"else_action": [{
+				"name":"nothing"
+			}]
+		},
+		
+		{
+			"name": "if",
+			"trigger": {
+				"name": "current_district",
+				"value": "SantoDomingo"
+			},
+			"if_action": [{
+				"name": "do_function",
+				"value": "ambush_car_6thstreet"
+			}],
+			"else_action": [{
+				"name":"nothing"
+			}]
+		},
+		
+		
+		
+		
+		{
+			"name": "if",
+			"trigger": {
+				"name": "current_district",
+				"value": "Watson"
+			},
+			"if_action": [{
+				
+				"name": "if",
+				"trigger": {
+					"name": "check",
+					"triggers": [
+						{
+							"name": "current_car_subdistrict",
+							"value": "Kabuki"
+						},
+						{
+							"name": "current_car_subdistrict",
+							"value": "LittleChina"
+						}
+					],
+					"logic":"or"
+				},
+					"if_action": [{
+						"name": "do_function",
+						"value": "ambush_car_mox"
+					}],
+					"else_action": [{
+						"name": "do_function",
+						"value": "ambush_car_maelstrom"
+					}]
+					
+			}],
+			"else_action": [{
+				"name":"nothing"
+			}]
+		},
+		
+		{
+			"name": "if",
+			"trigger": {
+				"name": "ambush_car_district",
+				"value": "Westbrook"
+			},
+			"if_action": [{
+				"name": "do_function",
+				"value": "ambush_car_tygers"
+			}],
+			"else_action": [{
+				"name":"nothing"
+			}]
+		}
+		
+		
+		
+		
+
+        ]
+}
+   
+   

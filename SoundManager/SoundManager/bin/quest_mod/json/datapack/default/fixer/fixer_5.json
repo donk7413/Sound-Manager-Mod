@@ -1,0 +1,19 @@
+{
+
+	"Name":"Regina Jones",
+	"LOC_X":-1145,
+	"LOC_Y":1570,
+	"LOC_Z":0,
+	"Faction":"faction_ncpd",
+	"Tag": "fixer_regina",
+	"exist":true,
+	"npcexist":true,
+	"NPCId":1949,
+	"trigger":{
+		"always_enable":{
+			"name":"auto"
+		}
+	},
+	"requirement":[["always_enable"]],
+	"action":[]
+}

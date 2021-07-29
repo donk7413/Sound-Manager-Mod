@@ -1,0 +1,93 @@
+[{
+        "Desc": "phone_default_basic_01",
+        "speaker": {
+            "value": "Phone",
+            "way": "speak"
+        },
+        "Tag": "speak_default_basic_01",
+        "trigger": {},
+        "requirement": [],
+        "options": [{
+                "Description": "phone_default_basic_01_01",
+                "action": [{
+                        "name": "dialog",
+                        "value": "speak_default_basic_02_y"
+                    }
+
+                ],
+                "trigger": {
+                    "auto": {
+                        "name": "auto"
+                    }
+                },
+                "requirement": [["auto"]]
+            }, {
+                "Description": "phone_default_basic_01_02",
+                "action": [{
+                        "name": "dialog",
+                        "value": "speak_default_basic_02_n"
+                    }
+
+                ],
+                "trigger": {
+                    "auto": {
+                        "name": "auto"
+                    }
+                },
+                "requirement": [["auto"]]
+            }
+        ]
+    }, {
+        "Desc": "phone_default_basic_02_y",
+        "speaker": {
+          "value": "Phone",
+            "way": "speak"
+        },
+        "Tag": "speak_default_basic_02_y",
+        "trigger": {},
+        "requirement": [],
+        "options": [{
+                "Description": "DialogCustomInit",
+                "useLang": true,
+                "action": [{
+                        "name": "dialog",
+                        "value": "phone_default_custom_init"
+                    }
+
+                ],
+                "trigger": {
+                    "auto": {
+                        "name": "auto"
+                    }
+                },
+                "requirement": [["auto"]]
+            }
+        ]
+    }, {
+        "Desc": "phone_default_basic_02_n",
+        "speaker": {
+            "value": "Phone",
+            "way": "speak"
+        },
+        "Tag": "speak_default_basic_02_n",
+        "trigger": {},
+        "requirement": [],
+        "options": [{
+                "Description": "DialogCustomInit",
+                "useLang": true,
+                "action": [{
+                        "name": "dialog",
+                        "value": "phone_default_custom_init"
+                    }
+
+                ],
+                "trigger": {
+                    "auto": {
+                        "name": "auto"
+                    }
+                },
+                "requirement": [["auto"]]
+            }
+        ]
+    }
+]

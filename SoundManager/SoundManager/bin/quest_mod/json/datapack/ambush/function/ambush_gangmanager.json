@@ -1,0 +1,147 @@
+{
+    "name": "ambush_gangmanager",
+    "tag": "ambush_gangmanager",
+    "action": [
+		{
+			"name": "if",
+			"trigger": {
+				"name": "current_district",
+				"value": "Badlands"
+			},
+			"if_action": [{
+				"name": "do_random_function",
+				"funcs": ["ambush_wraith","ambush_aldelcados"]
+			}],
+			"else_action": [{
+				"name":"nothing"
+			}]
+		},
+		
+		{
+			"name": "if",
+			"trigger": {
+				"name": "current_district",
+				"value": "CityCenter"
+			},
+			"if_action": [{
+				
+				"name": "do_random_function",
+				"funcs":  ["ambush_animal","ambush_scavenger"]
+			}],
+			"else_action": [{
+				"name":"nothing"
+			}]
+		},
+		
+		{
+			"name": "if",
+			"trigger": {
+				"name": "current_district",
+				"value": "Heywood"
+			},
+			"if_action": [{
+				"name": "do_function",
+				"value": "ambush_valentinos"
+			}],
+			"else_action": [{
+				"name":"nothing"
+			}]
+		},
+		
+	
+		
+		
+		{
+			"name": "if",
+			"trigger": {
+				"name": "current_district",
+				"value": "Pacifica"
+			},
+			"if_action": [{
+				"name": "do_function",
+				"value": "ambush_voodoo"
+			}],
+			"else_action": [{
+				"name":"nothing"
+			}]
+		},
+		
+		{
+			"name": "if",
+			"trigger": {
+				"name": "current_district",
+				"value": "SantoDomingo"
+			},
+			"if_action": [{
+				"name": "do_function",
+				"value": "ambush_6thstreet"
+			}],
+			"else_action": [{
+				"name":"nothing"
+			}]
+		},
+		
+		
+		
+		
+		{
+			"name": "if",
+			"trigger": {
+				"name": "current_district",
+				"value": "Watson"
+			},
+			"if_action": [{
+				
+				"name": "if",
+				"trigger": {
+					"name": "check",
+					"triggers": [
+						{
+							"name": "current_subdistrict",
+							"value": "Kabuki"
+						},
+						{
+							"name": "current_subdistrict",
+							"value": "LittleChina"
+						}
+					],
+					"logic":"or"
+				},
+					"if_action": [{
+						"name": "do_function",
+						"value": "ambush_mox"
+					}],
+					"else_action": [{
+						"name": "do_function",
+						"value": "ambush_maelstrom"
+					}]
+					
+			}],
+			"else_action": [{
+				"name":"nothing"
+			}]
+		},
+		
+		{
+			"name": "if",
+			"trigger": {
+				"name": "ambush_district",
+				"value": "Westbrook"
+			},
+			"if_action": [{
+				"name": "do_function",
+				"value": "ambush_tygers"
+			}],
+			"else_action": [{
+				"name":"nothing"
+			}]
+		}
+		
+		
+		
+		
+
+        ]
+}
+   
+   

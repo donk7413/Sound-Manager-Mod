@@ -1,0 +1,80 @@
+{
+    "name": "ambush_manager",
+    "tag": "ambush_manager",
+	"way": "ambush",
+    "trigger": {
+     
+		"trigger03": {
+           "name": "compare",
+			"trigger": {
+				"name": "player_inbuilding"
+			},
+			"expected": false
+        },
+		"trigger04": {
+            "name": "player_in_poi"
+        }
+		
+		
+		
+	
+    },
+    "requirement": [
+
+		[
+          "trigger03"
+        ]
+    ],
+    "action": [
+	{
+			
+			"name": "do_function",
+			
+			"value": "ambush_gangmanager"
+			
+	},
+		
+		{
+			"name": "wait_second",
+			"value": 0.1
+		},
+		{
+			"name": "wait_for_trigger",
+			"trigger": {
+				"name": "killed_group",
+				"tag": "ambushteam"
+			}		},
+		
+		{
+				"name": "notify",
+				"value": "ambush finished"
+		},
+			
+		{
+				"name": "wait_second",
+				"value": 15
+		},
+			
+		
+		
+		{
+			"name": "despawn_group",
+			"tag": "ambushteam"
+		},
+		
+		{
+			"name": "wait_second",
+			"value": 1
+		},
+		{
+			"name": "remove_group",
+			"tag": "ambushteam"
+		}
+		
+		
+		
+		
+		
+		
+    ]
+}

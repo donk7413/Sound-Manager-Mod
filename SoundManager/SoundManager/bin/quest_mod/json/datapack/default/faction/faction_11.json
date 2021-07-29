@@ -1,0 +1,11 @@
+{
+
+	"Name":"Aldecaldos",
+	
+	"Tag": "faction_aldecaldos",
+	"AttitudeGroup":["aldecaldos"],
+	"Rivals":["faction_wraith"],
+	"SpawnableNPC":["Character.adelcaldos_grunt1_ranged1_nova_wa","Character.aldecaldos_grunt2_melee2__ma"],
+	"SpawnableVehicule":["Vehicle.v_sport2_quadra_type66_nomad"],
+	"DistrictTag":"district_badland"
+}

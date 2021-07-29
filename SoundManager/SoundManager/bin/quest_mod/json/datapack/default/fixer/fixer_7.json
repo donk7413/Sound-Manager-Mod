@@ -1,0 +1,19 @@
+{
+
+	"Name":"Rita Wheeler",
+	"LOC_X":-1202,
+	"LOC_Y":1562,
+	"LOC_Z":20,
+	"Faction":"faction_mox",
+	"Tag": "fixer_rita",
+	"exist":false,
+	"npcexist":true,
+	"NPCId":7779,
+	"trigger":{
+		"always_enable":{
+			"name":"auto"
+		}
+	},
+	"requirement":[["always_enable"]],
+	"action":[]
+}

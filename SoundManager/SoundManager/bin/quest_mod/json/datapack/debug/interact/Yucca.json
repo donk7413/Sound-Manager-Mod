@@ -1,0 +1,25 @@
+{
+	"name": "Go to Yucca",
+	"tag": "yucca",
+	"timer": 0,
+	"sorttag": "yucca",
+	"display": "event_interact",
+	"trigger": {
+		"auto": {
+			"name": "debug"
+		}
+	},
+	"requirement": [
+		[
+			"auto"
+		]
+	],
+	"action": [
+		{
+			"name": "teleport_player",
+			"x": -3985.0,
+			"y": -6500.0,
+			"z": 75.7
+		}
+	]
+}

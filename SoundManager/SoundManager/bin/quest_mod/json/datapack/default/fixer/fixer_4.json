@@ -1,0 +1,19 @@
+{
+
+	"Name":"Sebastian « Padre » Ibarra",
+	"LOC_X":-1805,
+	"LOC_Y":-1275,
+	"LOC_Z":22,
+	"Faction":"faction_valentinos",
+	"Tag": "fixer_padre",
+	"NPCId":1739,
+	"exist":true,
+	"npcexist":false,
+	"trigger":{
+		"always_enable":{
+			"name":"auto"
+		}
+	},
+	"requirement":[["always_enable"]],
+	"action":[]
+}

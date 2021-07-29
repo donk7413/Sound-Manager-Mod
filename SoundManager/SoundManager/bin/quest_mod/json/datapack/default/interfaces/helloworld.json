@@ -1,0 +1,146 @@
+{
+	"title":"Hello World",
+	"tag":"helloworld",
+	"width":500,
+	"heigh":500,
+	"x":200,
+	"y":200,
+	
+	"controls":
+	[	
+		{	
+			"type":"button",
+			"title":"Close",
+			"tag":"button",
+			"trigger":
+			{
+				"auto":
+				{
+					"name":"auto"
+				}
+				
+			},
+			"requirement":[["auto"]],
+			"action":
+			[
+				{
+				"name": "close_interface"
+				}
+			]
+		},
+	
+		{	
+			"type":"linebreak"
+		
+		},
+		{	
+			"type":"linebreak"
+		
+		},
+		{	
+			"type":"linebreak"
+		
+		},
+		{	
+			"type":"label",
+			"tag":"My Label",
+			"trigger":
+			{
+				"auto":
+				{
+					"name":"auto"
+				}
+				
+			},
+			"requirement":[["auto"]],
+			"value":
+			{
+				"type":"text",
+				"value":"Hello World :)"
+			}
+		},
+		
+		{	
+			"type":"linebreak"
+		
+		},
+		
+		{	
+			"type":"label",
+			"tag":"My Label",
+			"trigger":
+			{
+				"auto":
+				{
+					"name":"auto"
+				}
+				
+			},
+		"requirement":[["auto"]],
+			"value":
+			{
+				"type":"text",
+				"value":"Score of the tygers :"
+			}
+		},
+		
+		{	
+			"type":"sameline"
+		
+		},
+		
+		{	
+			"type":"number",
+			"title":"My Score",
+			"tag":"price",
+			"trigger":
+			{
+				"auto":
+				{
+					"name":"auto"
+				}
+				
+			},
+			"requirement":[["auto"]],
+			"value":
+			
+			{
+				"type":"score",
+				"tag":"faction_tygerclaws",
+				"key":"Score"
+			}
+		},
+		
+		{	
+			"type":"linebreak"
+		
+		},
+		
+		{	
+			"type":"button",
+			"title":"My Button",
+			"tag":"button",
+			"trigger":
+			{
+				"auto":
+				{
+					"name":"auto"
+				}
+				
+			},
+			"requirement":[["auto"]],
+			"action":
+			[
+				{
+				"name": "notify",
+				"value": "It's Working :D"
+				}
+			]
+		}
+		
+		
+		
+		
+	]
+	
+}

@@ -1,0 +1,19 @@
+{
+
+	"Name":"Nash",
+	"LOC_X":2577,
+	"LOC_Y":-5,
+	"LOC_Z":85,
+	"Faction":"faction_wraith",
+	"Tag": "fixer_nash",
+	"exist":false,
+	"npcexist":false,
+	"NPCId":8208,
+	"trigger":{
+		"always_enable":{
+			"name":"auto"
+		}
+	},
+	"requirement":[["always_enable"]],
+	"action":[]
+}

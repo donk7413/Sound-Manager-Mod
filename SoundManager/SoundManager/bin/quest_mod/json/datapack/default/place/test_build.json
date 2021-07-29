@@ -1,0 +1,55 @@
+{
+	"name": "Yucca Backdoor",
+	"tag": "building test",
+	"posX": -4573,
+	"posY": -6336,
+	"posZ": 82,
+	"range":30,
+	"EnterX": -4572,
+	"EnterY": -6337,
+	"EnterZ": 82,
+	"ExitX": -4571,
+	"ExitY": -6337,
+	"ExitZ": 82,
+	"isbuyable": true,
+	"price":50,
+	"isrentable": false,
+	"rent":50,
+	"type": 0,
+	"coef": 10,
+	"rooms": [
+		{
+			"posX": -4579,
+			"posY": -6344,
+			"posZ": 82,
+			"range":12,
+			"name": "area 1",
+			"tag": "area_1",
+			"type": [
+				0
+			],
+			"trigger": {
+				"always_enable": {
+					"name": "auto"
+				}
+			},
+			"requirement": [
+				[
+					"always_enable"
+				]
+			],
+			"action": []
+		}
+	],
+	"trigger": {
+		"always_enable": {
+			"name": "auto"
+		}
+	},
+	"requirement": [
+		[
+			"always_enable"
+		]
+	],
+	"action": []
+}

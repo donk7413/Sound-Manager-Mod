@@ -1,0 +1,15 @@
+{
+	"desc": "aldeTest",
+	"locations": [
+		{
+			"x": -800.6845703125,
+			"subdistrict": "Badlands_BiotechnicaFlats",
+			"inVehicule": false,
+			"y": -2491.1767578125,
+			"district": "Badlands",
+			"z": 14.438255310059,
+			"Tag": "district_badland"
+		}
+	],
+	"isFor": 3
+}

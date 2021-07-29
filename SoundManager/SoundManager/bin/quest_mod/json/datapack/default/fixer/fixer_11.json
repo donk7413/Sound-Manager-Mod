@@ -1,0 +1,19 @@
+{
+
+	"Name":"Coach Fred",
+	"LOC_X":-1430,
+	"LOC_Y":1335,
+	"LOC_Z":86,
+	"Faction":"faction_animals",
+	"Tag": "fixer_fred",
+	"exist":false,
+	"npcexist":true,
+	"NPCId":8425,
+	"trigger":{
+		"always_enable":{
+			"name":"auto"
+		}
+	},
+	"requirement":[["always_enable"]],
+	"action":[]
+}

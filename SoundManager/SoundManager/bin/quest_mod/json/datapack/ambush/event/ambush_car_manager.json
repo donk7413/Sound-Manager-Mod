@@ -1,0 +1,80 @@
+{
+    "name": "ambush_car_manager",
+    "tag": "ambush_car_manager",
+	"way": "ambush",
+    "trigger": {
+     
+		"trigger03": {
+           "name": "compare",
+			"trigger": {
+				"name": "player_inbuilding"
+			},
+			"expected": false
+        },
+		"trigger04": {
+            "name": "in_car"
+        }
+		
+		
+		
+	
+    },
+    "requirement": [
+
+		[
+          "trigger04"
+        ]
+    ],
+    "action": [
+	{
+			
+			"name": "do_function",
+			
+			"value": "ambush_car_gangmanager"
+			
+	},
+		
+		{
+			"name": "wait_second",
+			"value": 0.1
+		},
+		{
+			"name": "wait_for_trigger",
+			"trigger": {
+				"name": "killed_group",
+				"tag": "ambushteam"
+			}		},
+		
+		{
+				"name": "notify",
+				"value": "Ambush finished"
+		},
+			
+		{
+				"name": "wait_second",
+				"value": 15
+		},
+			
+		
+		
+		{
+			"name": "despawn_group",
+			"tag": "ambushteam"
+		},
+		
+		{
+			"name": "wait_second",
+			"value": 1
+		},
+		{
+			"name": "remove_group",
+			"tag": "ambushteam"
+		}
+		
+		
+		
+		
+		
+		
+    ]
+}

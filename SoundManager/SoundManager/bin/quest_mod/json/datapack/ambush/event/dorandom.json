@@ -1,0 +1,23 @@
+{
+    "name": "dorandom",
+    "tag": "dorandom",
+	"way": "ambush",
+    "trigger": {
+        "trigger01": {
+            "name": "auto"
+        }
+    },
+    "requirement": [
+        [
+            "trigger01"
+        ]
+    ],
+    "action": [
+		{
+		
+			"name":"do_random_event",
+			"events": ["animalvsvoodoo","nothing","scavvsmaeal","wraithvsalde","moxvstyger","nothing","6thstreetvsvalentinos","maxtac010","trauma01","nothing","ambush_manager","hardkopy01","hardkopy02"]
+		
+		}
+    ]
+}

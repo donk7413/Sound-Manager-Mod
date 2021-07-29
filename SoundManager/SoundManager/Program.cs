@@ -329,9 +329,9 @@ namespace SoundManager
                             }
                         }
                     }
-                    catch
+                    catch(Exception ex)
                     {
-                        // Console.WriteLine("waiting for a file");
+                        Console.WriteLine(ex);
                     }
                 }
 

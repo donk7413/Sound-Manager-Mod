@@ -1,0 +1,11 @@
+{
+
+	"Name":"NCPD",
+	
+	"Tag": "faction_ncpd",
+	"AttitudeGroup":["ncpd"],
+	"Rivals":[],
+	"SpawnableNPC":[],
+	"SpawnableVehicule":[],
+	"DistrictTag":""
+}

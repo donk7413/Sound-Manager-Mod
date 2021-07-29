@@ -1,0 +1,26 @@
+{
+    "width": 0,
+    "title": "test",
+    "heigh": 0,
+    "y": 0,
+    "controls": [{
+            "trigger": {
+                "rers": {
+                    "name": "auto",
+                    "helper": "This trigger will be triggered without need anything (default)"
+                }
+            },
+            "title": "",
+            "tag": "tets",
+            "type": "label",
+            "action": [],
+            "value": {
+                "type": "text",
+                "value": "testgg"
+            },
+            "requirement": [["rers"]]
+        }
+    ],
+    "x": 0,
+    "tag": "test"
+}

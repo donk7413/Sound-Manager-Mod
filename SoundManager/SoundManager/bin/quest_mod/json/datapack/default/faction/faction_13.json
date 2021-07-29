@@ -1,0 +1,11 @@
+{
+
+	"Name":"MaxTac",
+
+	"Tag": "faction_maxtac",
+	"AttitudeGroup":["maxtac"],
+	"Rivals":[],
+	"SpawnableNPC":[],
+	"SpawnableVehicule":[],
+	"DistrictTag":""
+}

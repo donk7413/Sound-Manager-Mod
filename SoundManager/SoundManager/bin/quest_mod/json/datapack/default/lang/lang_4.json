@@ -1,0 +1,21 @@
+{
+    "test_judy_quest00_00": "Hello V, How are you ?",
+    "test_judy_quest00_00a": "Are you Ok ?",
+    "test_judy_quest00_00b": "Don't want to talk to you.",
+	
+	"test_judy_quest00_01": "I'm fine, so what's up ?",
+    "test_judy_quest00_01a": "Just Chillin'",
+    "test_judy_quest00_01b": "Oh shut up !",
+	
+	"test_judy_quest00_02": "So what do you want to do ?",
+    "test_judy_quest00_02a": "Maybe we can meet ?",
+    "test_judy_quest00_02b": "Nothing with you !",
+	
+	"test_judy_quest00_03": "Sure, where ?",
+    "test_judy_quest00_03a": "At Afterlife, one day",
+    "test_judy_quest00_03b": "At your home, one night",
+	
+	"test_judy_quest00_04": "Yeah, we should think about it ! Call you later !",
+	
+	"test_judy_quest00_05": "Oh, I know what you mean, I will enjoy it I think ! Call you later !"
+}

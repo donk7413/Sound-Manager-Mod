@@ -1,0 +1,9 @@
+{
+    "name": "Ambush",
+    "desc": "Ambush for IRP",
+    "author": "donk7413",
+    "file": "ambush.zip",
+    "tag": "ambush",
+    "version": "0.0007",
+    "isessential": false
+}

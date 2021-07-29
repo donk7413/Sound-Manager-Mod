@@ -1,0 +1,50 @@
+{
+    "name": "maxtac_tygers",
+    "tag": "maxtac_tygers",
+    "action": [
+		{
+			 "name": "summon_entity_at_entity_relative","entity":"player",
+			"npc" : 
+				"Character.mq035_tyger_claw_01",
+			"x": -15,
+			"y": -15,
+			"z": 0,
+			"amount": 1,
+			"tag": "blue01",
+			"spawnlevel": 36
+		},
+		{
+			 "name": "summon_entity_at_entity_relative","entity":"player",
+			"npc" : 
+				"Character.mq035_tyger_claw_01",
+			"x": -15,
+			"y": -14,
+				"z": 0,
+			"amount": 1,
+			"tag": "blue02",
+			"spawnlevel": 36
+		},
+		{
+			 "name": "summon_entity_at_entity_relative","entity":"player",
+			"npc" : 
+				"Character.mq035_tyger_claw_02",
+			"x": -15,
+			"y": -13,
+		"z": 0,
+			"amount": 1,
+			"tag": "blue03",
+			"spawnlevel": 36
+		},
+		{
+			 "name": "summon_entity_at_entity_relative","entity":"player",
+			"npc" : 
+				"Character.mq035_tyger_claw_02",
+			"x": -15,
+			"y": -12,
+			"z": 0,
+			"amount": 1,
+			"tag": "blue04",
+			"spawnlevel": 36
+		}
+    ]
+}

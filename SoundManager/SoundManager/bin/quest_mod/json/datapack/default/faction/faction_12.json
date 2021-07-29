@@ -1,0 +1,11 @@
+{
+
+	"Name":"Delamain",
+
+	"Tag": "faction_delamain",
+	"AttitudeGroup":["Delamain"],
+	"Rivals":[],
+	"SpawnableNPC":[],
+	"SpawnableVehicule":[],
+	"DistrictTag":""
+}

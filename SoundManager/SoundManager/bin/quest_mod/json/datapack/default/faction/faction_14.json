@@ -1,0 +1,11 @@
+{
+
+	"Name":"TraumaTeam",
+
+	"Tag": "faction_trauma",
+	"AttitudeGroup":["traumateam"],
+	"Rivals":[],
+	"SpawnableNPC":[],
+	"SpawnableVehicule":[],
+	"DistrictTag":""
+}

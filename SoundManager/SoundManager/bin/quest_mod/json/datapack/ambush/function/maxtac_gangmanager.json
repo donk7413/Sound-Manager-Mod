@@ -1,0 +1,140 @@
+{
+    "name": "maxtac_gangmanager",
+    "tag": "maxtac_gangmanager",
+    "action": [
+		{
+			"name": "if",
+			"trigger": {
+				"name": "current_district",
+				"value": "Badlands"
+			},
+			"if_action": [{
+				"name": "do_random_function",
+				"funcs": ["maxtac_wraith","maxtac_aldelcados"]
+			}],
+			"else_action": [{
+				"name":"nothing"
+			}]
+		},
+		
+		{
+			"name": "if",
+			"trigger": {
+				"name": "current_district",
+				"value": "CityCenter"
+			},
+			"if_action": [{
+				
+				"name": "do_random_function",
+				"funcs":  ["maxtac_animal","maxtac_scavenger"]
+			}],
+			"else_action": [{
+				"name":"nothing"
+			}]
+		},
+		
+		{
+			"name": "if",
+			"trigger": {
+				"name": "current_district",
+				"value": "Heywood"
+			},
+			"if_action": [{
+				"name": "do_function",
+				"value": "maxtac_valentinos"
+			}],
+			"else_action": [{
+				"name":"nothing"
+			}]
+		},
+		
+	
+		
+		
+		{
+			"name": "if",
+			"trigger": {
+				"name": "current_district",
+				"value": "Pacifica"
+			},
+			"if_action": [{
+				"name": "do_function",
+				"value": "maxtac_voodoo"
+			}],
+			"else_action": [{
+				"name":"nothing"
+			}]
+		},
+		
+		{
+			"name": "if",
+			"trigger": {
+				"name": "current_district",
+				"value": "SantoDomingo"
+			},
+			"if_action": [{
+				"name": "do_function",
+				"value": "maxtac_6thstreet"
+			}],
+			"else_action": [{
+				"name":"nothing"
+			}]
+		},
+		
+		
+		
+		
+		{
+			"name": "if",
+			"trigger": {
+				"name": "current_district",
+				"value": "Watson"
+			},
+			"if_action": [{
+				
+				"name": "if",
+				"trigger": {
+					"name": "testFor",
+					"triggers": [
+						{
+							"name": "current_subdistrict",
+							"value": "Kabuki"
+						},
+						{
+							"name": "current_subdistrict",
+							"value": "LittleChina"
+						}
+					],
+					"logic":"or"
+				},
+					"if_action": [{
+						"name": "do_function",
+						"value": "maxtac_mox"
+					}],
+					"else_action": [{
+						"name": "do_function",
+						"value": "maxtac_maelstrom"
+					}]
+					
+			}],
+			"else_action": [{
+				"name":"nothing"
+			}]
+		},
+		
+		{
+			"name": "if",
+			"trigger": {
+				"name": "current_district",
+				"value": "Westbrook"
+			},
+			"if_action": [{
+				"name": "do_function",
+				"value": "maxtac_tygers"
+			}],
+			"else_action": [{
+				"name":"nothing"
+			}]
+		}
+    ]
+}

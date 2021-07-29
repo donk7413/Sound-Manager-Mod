@@ -1,0 +1,11 @@
+{
+
+	"Name":"Animals",
+	
+	"Tag": "faction_animals",
+	"AttitudeGroup":["animals"],
+	"Rivals":["faction_voodooboys"],
+	"SpawnableNPC":["Character.animals_bouncer1_melee1_fists_mb","Character.animals_bouncer1_ranged1_kenshin_mb"],
+	"SpawnableVehicule":["Vehicle.v_sportbike1_yaiba_kusanagi_animal"],
+	"DistrictTag":"district_downtown"
+}

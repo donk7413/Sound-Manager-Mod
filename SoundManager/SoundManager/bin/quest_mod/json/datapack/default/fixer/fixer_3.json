@@ -1,0 +1,19 @@
+{
+
+	"Name":"Rogue Amendiares",
+	"LOC_X":-1424,
+	"LOC_Y":1013,
+	"LOC_Z":0,
+	"Faction":"faction_voodooboys",
+	"Tag": "fixer_rogue",
+	"NPCId":1958,
+	"exist":true,
+	"npcexist":true,
+	"trigger":{
+		"always_enable":{
+			"name":"auto"
+		}
+	},
+	"requirement":[["always_enable"]],
+	"action":[]
+}

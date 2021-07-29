@@ -1,0 +1,9 @@
+{
+    "name": "Main",
+    "desc": "The main datapack of the mod, contains main fixers and all stuff that mod require for work",
+    "author": "donk7413",
+    "file": "default.zip",
+    "tag": "default",
+    "version": "0.000005",
+    "isessential": true
+}

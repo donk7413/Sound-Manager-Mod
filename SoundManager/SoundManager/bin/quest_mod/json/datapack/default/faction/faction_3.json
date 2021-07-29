@@ -1,0 +1,11 @@
+{
+
+	"Name":"VoodooBoys",
+
+	"Tag": "faction_voodooboys",
+	"AttitudeGroup":["voodooBoys","voodoo"],
+	"Rivals":["faction_animals"],
+	"SpawnableNPC":["Character.q110_esc_voodooboys_grunt1_ranged2_saratoga_ma","Character.q110_esc_voodooboys_grunt1_ranged2_sidewinder_wa"],
+	"SpawnableVehicule":["Vehicle.v_standard2_thorton_galena_voodoo_boys"],
+	"DistrictTag":"district_pacifica"
+}

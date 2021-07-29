@@ -1,0 +1,34 @@
+{
+    "name": "current star follower",
+    "tag": "currentstar_follower",
+    "action": [
+		{
+		
+		"name": "wait_second",
+        "value": 5
+		
+		},
+		{
+        "name": "attitude_entity_against_entity",
+        "tag": "current_star",
+        "entity": "player",
+        "attitude": "companion"
+
+		},
+		{
+        "name": "play_entity_voice",
+        "tag": "current_star",
+        "voice": "greeting"
+
+		}, {
+        "name": "play_entity_facial",
+        "tag": "current_star",
+        "reaction": {
+            "category": 1,
+            "idle": 9,
+            "desc": "happy"
+        }
+
+		}
+    ]
+}

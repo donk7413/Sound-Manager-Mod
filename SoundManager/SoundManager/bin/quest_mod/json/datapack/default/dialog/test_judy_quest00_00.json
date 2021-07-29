@@ -1,0 +1,256 @@
+[{
+        "Desc": "test_judy_quest00_00",
+        "speaker": {
+			"value": "Judy",
+            "way": "phone"
+        },
+
+        "Tag": "test_judy_quest00_00",
+
+        "trigger": {},
+        "requirement": [],
+
+        "options": [{
+                "Description": "test_judy_quest00_00a",
+                "action": [{
+                        "name": "dialog",
+                        "value": "test_judy_quest00_01"
+                    }, {
+                        "name": "npc_affinity",
+                        "value": "Judy",
+                        "score": 1
+                    }
+
+                ],
+                "trigger": {
+                    "auto": {
+                        "name": "auto"
+                    }
+                },
+                "requirement": [["auto"]]
+            }, {
+                "Description": "test_judy_quest00_00b",
+                "action": []
+            }
+        ]
+    }, {
+        "Desc": "test_judy_quest00_01",
+        "speaker": {
+            "value": "Judy",
+            "way": "phone"
+        },
+        "Tag": "test_judy_quest00_01",
+        "trigger": {
+            "condition01": {
+                "name": "npc_affinity",
+                "value": "Judy",
+                "score": 5,
+
+            }
+
+        },
+        "requirement":
+        [
+            ["condition01"]
+
+        ],
+        "options": [{
+                "Description": "test_judy_quest00_01a",
+                "action": [{
+                        "name": "dialog",
+                        "value": "test_judy_quest00_02"
+                    }, {
+                        "name": "npc_affinity",
+                        "value": "Judy",
+                        "score": 1
+                    }
+
+                ],
+                "trigger": {
+                    "auto": {
+                        "name": "auto"
+                    }
+                },
+                "requirement": [["auto"]]
+
+            }, {
+                "Description": "test_judy_quest00_01b",
+                "action": [{
+                        "name": "npc_affinity",
+                        "value": "Judy",
+                        "score": -1
+                    }
+
+                ]
+            }
+        ]
+    }, {
+        "Desc": "test_judy_quest00_02",
+        "speaker": {
+            "value": "Judy",
+            "way": "phone"
+        },
+        "Tag": "test_judy_quest00_02",
+
+        "trigger": {
+            "condition01": {
+                "name": "npc_affinity",
+                "value": "Judy",
+                "score": 5,
+
+            }
+
+        },
+        "requirement":
+        [
+            ["condition01"]
+
+        ],
+        "options": [{
+                "Description": "test_judy_quest00_02a",
+                "action": [{
+                        "name": "dialog",
+                        "value": "test_judy_quest00_03"
+                    }, {
+                        "name": "npc_affinity",
+                        "value": "Judy",
+                        "score": 1
+                    }
+
+                ],
+                "trigger": {
+                    "auto": {
+                        "name": "auto"
+                    }
+                },
+                "requirement": [["auto"]]
+            }, {
+                "Description": "test_judy_quest00_02b",
+                "action": [{
+                        "name": "npc_affinity",
+                        "value": "Judy",
+                        "score": -1
+                    },
+				{
+					"name": "change_dialog_windows",
+					"value": false,
+					"window": "phone",
+					"helper": "This action will open/close an specific dialog windows "
+				}
+
+                ],
+                "trigger": {
+                    "auto": {
+                        "name": "auto"
+                    }
+                },
+                "requirement": [["auto"]]
+            }
+        ]
+    }, {
+        "Desc": "test_judy_quest00_03",
+        "speaker": {
+            "value": "Judy",
+            "way": "phone"
+        },
+        "Tag": "test_judy_quest00_03",
+        "trigger": {
+            "condition01": {
+                "name": "npc_affinity",
+                "value": "Judy",
+                "score": 5,
+
+            }
+
+        },
+        "requirement":
+        [
+            ["condition01"]
+
+        ],
+        "options": [{
+                "Description": "test_judy_quest00_03a",
+                "action": [{
+                        "name": "npc_affinity",
+                        "value": "Judy",
+                        "score": 1
+                    }, {
+                        "name": "dialog",
+                        "value": "test_judy_quest00_04"
+                    }
+
+                ],
+                "trigger": {
+                    "auto": {
+                        "name": "auto"
+                    }
+                },
+                "requirement": [["auto"]]
+            }, {
+                "Description": "test_judy_quest00_03b",
+                "action": [{
+                        "name": "npc_affinity",
+                        "value": "Judy",
+                        "score": 1
+                    }, {
+                        "name": "dialog",
+                        "value": "test_judy_quest00_05"
+                    }
+
+                ],
+                "trigger": {
+                    "auto": {
+                        "name": "auto"
+                    }
+                },
+                "requirement": [["auto"]]
+            }
+        ]
+    },
+    {
+        "Desc": "test_judy_quest00_04",
+        "speaker": {
+            "value": "Judy",
+            "way": "phone"
+        },
+        "Tag": "test_judy_quest00_04",
+        "trigger": {
+            "condition01": {
+                "name": "npc_affinity",
+                "value": "Judy",
+                "score": 5,
+
+            }
+
+        },
+        "requirement":
+        [
+            ["condition01"]
+
+        ],
+        "options": []
+    },
+    {
+        "Desc": "test_judy_quest00_05",
+        "speaker": {
+            "value": "Judy",
+            "way": "phone"
+        },
+        "Tag": "test_judy_quest00_05",
+        "trigger": {
+            "condition01": {
+                "name": "npc_affinity",
+                "value": "Judy",
+                "score": 95,
+
+            }
+
+        },
+        "requirement":
+        [
+            ["condition01"]
+
+        ],
+        "options": []
+    }
+]

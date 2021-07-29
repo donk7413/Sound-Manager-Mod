@@ -1,0 +1,55 @@
+{
+	"name": "Akulov Penthouse",
+	"tag": "playerhouse01",
+	"posX": -1200,
+	"posY": 1415,
+	"posZ": 109,
+	"range":30,
+	"EnterX": -1205,
+	"EnterY": 1390,
+	"EnterZ": 21,
+	"ExitX": -1210,
+	"ExitY": 1390,
+	"ExitZ": 109,
+	"isbuyable": true,
+	"price":50,
+	"isrentable": false,
+	"rent":50,
+	"type": 0,
+	"coef": 10,
+	"rooms": [
+		{
+			"posX": -1190,
+			"posY": 1418,
+			"posZ": 113,
+			"range":4,
+			"name": "Bedroom",
+			"tag": "playerhouse_bed",
+			"type": [
+				0
+			],
+			"trigger": {
+				"always_enable": {
+					"name": "auto"
+				}
+			},
+			"requirement": [
+				[
+					"always_enable"
+				]
+			],
+			"action": []
+		}
+	],
+	"trigger": {
+		"always_enable": {
+			"name": "auto"
+		}
+	},
+	"requirement": [
+		[
+			"always_enable"
+		]
+	],
+	"action": []
+}

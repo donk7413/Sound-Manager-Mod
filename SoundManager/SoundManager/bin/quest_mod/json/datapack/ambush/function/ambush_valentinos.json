@@ -1,0 +1,143 @@
+{
+    "name": "ambush_valentinos",
+    "tag": "ambush_valentinos",
+    "action": [
+		{
+			 "name": "summon_entity_at_entity_relative","entity":"player",
+			"npc" : 
+				"Character.gle_valentinos_grunt1_ranged1_nova_ma",
+			"x": -15,
+			"y": -15,
+			"z": 0,
+			"amount": 1,
+			"tag": "blue01",
+			"spawnlevel": 36
+		},
+		{
+			 "name": "summon_entity_at_entity_relative","entity":"player",
+			"npc" : 
+				"Character.gle_valentinos_grunt1_ranged1_nova_ma",
+			"x": -15,
+			"y": -14,
+				"z": 0,
+			"amount": 1,
+			"tag": "blue02",
+			"spawnlevel": 36
+		},
+		{
+			 "name": "summon_entity_at_entity_relative","entity":"player",
+			"npc" : 
+				"Character.gle_valentinos_grunt2_melee2_machete_wa",
+			"x": -15,
+			"y": -13,
+		"z": 0,
+			"amount": 1,
+			"tag": "blue03",
+			"spawnlevel": 36
+		},
+		{
+			 "name": "summon_entity_at_entity_relative","entity":"player",
+			"npc" : 
+				"Character.gle_valentinos_grunt2_melee2_machete_wa",
+			"x": -15,
+			"y": -12,
+			"z": 0,
+			"amount": 1,
+			"tag": "blue04",
+			"spawnlevel": 36
+		},
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		{
+			"name": "wait_second",
+			"value": 1
+		},
+		{
+			"name": "create_group",
+			"tag": "ambushteam"
+		},
+		{
+			"name": "set_entity_to_group",
+			"tag": "ambushteam",
+			"entities": [
+				"blue01",
+				"blue02",
+				"blue03",
+				"blue04"
+			]
+		},
+		{
+			"name": "wait_second",
+			"value": 0.5
+		},
+		{
+			"name": "teleport_group_at_relative_position",
+			"x": 0,
+			"y": 0,
+			"z": 0,
+			"rotation": 1,
+			"tag": "ambushteam"
+		},
+		{
+			"name": "wait_second",
+			"value": 1
+		},
+			
+		
+		
+		 {
+        "name": "if",
+        "trigger": {
+            "name": "gang_affinity",
+				"value":"faction_valentinos",
+            "score": 0
+        },
+       "if_action": [
+				{
+					"name": "attitude_group_against_entity",
+					"entity": "player",
+					"attitude": "passive",
+					"tag": "ambushteam"
+				},
+				{
+					"name": "notify",
+					"value": "Some crews are here to help you !"
+				}
+			],
+			"else_action": [
+				{
+					"name": "attitude_group_against_entity",
+					"entity": "player",
+					"attitude": "hostile",
+					"tag": "ambushteam"
+				},
+				{
+					"name": "notify",
+					"value": "Hostiles actions towards you have been detected !"
+				}
+			]
+		}
+	]
+}

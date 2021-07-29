@@ -1,0 +1,305 @@
+{
+    "name": "6thstreetvsvalentinos",
+    "tag": "6thstreetvsvalentinos",
+	"way": "ambush",
+    "trigger": {
+        "trigger01": {
+            "name": "current_district",
+			"value":"SantoDomingo"
+		},
+		"trigger02": {
+            "name": "current_district",
+			"value":"Heywood"
+		},
+		"trigger03": {
+			"name": "compare",
+			"trigger": {
+				"name": "player_inbuilding"
+			},
+			"expected": false
+		},
+		"trigger04": {
+            "name": "player_in_poi"
+		}
+	},
+    "requirement": [
+        [
+            "trigger01","trigger03"
+		],
+		[
+            "trigger02","trigger03"
+		]
+	],
+    "action": [{
+		"name": "summon_entity_at_entity_relative","entity":"player",
+		"npc" : "Character.sts_hey_gle_06_6th_street_smg_ma",
+		"x": -10,
+		"y": -10,
+		"z": 0,
+		"amount": 1,
+		"tag": "blue01",
+		"spawnlevel": 36
+		
+	},
+	
+	{
+		"name": "summon_entity_at_entity_relative","entity":"player",
+		"npc" : "Character.sts_hey_gle_06_6th_street_smg_wa",
+		"x": -10,
+		"y": -9,
+		"z": 0,
+		"amount": 1,
+		"tag": "blue02","spawnlevel": 36
+		
+	},
+	{
+		"name": "summon_entity_at_entity_relative","entity":"player",
+		"npc" : "Character.sts_hey_gle_06_6th_street_smg_ma",
+		"x": -10,
+		"y": -8,
+		"z": 0,
+		"amount": 1,
+		"tag": "blue03","spawnlevel": 36
+		
+        },{
+		"name": "summon_entity_at_entity_relative","entity":"player",
+		"npc" : "Character.sts_hey_gle_06_6th_street_smg_wa",
+		"x": -10,
+		"y": -7,
+		"z": 0,
+		"amount": 1,
+		"tag": "blue04","spawnlevel": 36
+		
+	},	
+	{
+		
+		"name":"wait_second",
+		"value":0.5
+		
+	},
+	{
+		"name": "summon_entity_at_entity_relative","entity":"player",
+		"npc" : "Character.gle_valentinos_grunt1_ranged1_nova_ma",
+		"x": 10,
+		"y": 10,
+		"z": 0,
+		"amount": 1,
+		"tag": "red01","spawnlevel": 36
+		
+	},
+	{
+		"name": "summon_entity_at_entity_relative","entity":"player",
+		"npc" : "Character.gle_valentinos_grunt2_melee2_machete_wa",
+		"x": 10,
+		"y": 9,
+		"z": 0,
+		"amount": 1,
+		"tag": "red02","spawnlevel": 36
+		
+	},	
+	{
+		"name": "summon_entity_at_entity_relative","entity":"player",
+		"npc" : "Character.gle_valentinos_grunt1_ranged1_nova_ma",
+		"x": 10,
+		"y": 8,
+		"z": 0,
+		"amount": 1,
+		"tag": "red03","spawnlevel": 36
+		
+	},	
+	{
+		"name": "summon_entity_at_entity_relative","entity":"player",
+		"npc" : "Character.gle_valentinos_grunt2_melee2_machete_wa",
+		"x": 10,
+		"y": 7,
+		"z": 0,
+		"amount": 1,
+		"tag": "red04","spawnlevel": 36
+		
+	},	
+	{
+		
+		"name":"wait_second",
+		"value":0.1
+		
+	},
+	
+	{
+		"name": "create_group",
+        
+		"tag": "sixteam"
+		
+	},
+	{
+		
+		"name":"wait_second",
+		"value":1
+		
+	},
+	
+	{
+		"name": "create_group",
+        
+		"tag": "valteam"
+		
+	},
+	{
+		
+		"name":"wait_second",
+		"value":1
+		
+	},
+	{
+		"name": "set_entity_to_group",
+		"tag": "sixteam",
+		"entities": ["blue01","blue02","blue03","blue04"]
+		
+	},
+	{
+		"name": "set_entity_to_group",
+		"tag": "valteam",
+		"entities": ["red01","red02","red03","red04"]
+		
+	},	
+	{
+		
+		"name":"wait_second",
+		"value":1
+		
+	},
+	
+	
+	{
+		"name": "move_group_at_relative_position",
+		
+		"tag": "sixteam",
+		"x": 5,
+		"y": 0,
+		"z": 0,
+		"rotation": 1,
+		"move": "Sprint"
+		
+	},
+	{
+		"name": "move_group_at_relative_position",
+		
+		"tag": "valteam",
+		"x": -5,
+		"y": 0,
+		"z": 0,
+		"rotation": 1,
+		"move": "Sprint"
+		
+	},	
+	{
+		
+		"name":"wait_second",
+		"value":1
+		
+	},
+	
+	
+	{
+		"name": "look_at_entity_group",
+		
+		"tag": "valteam",
+		"entity":"blue01"
+		
+	},
+	{
+		"name": "look_at_entity_group",
+		
+		"tag": "sixteam",
+		"entity":"red01"
+		
+	},
+	{
+		
+		"name":"wait_second",
+		"value":1
+		
+	},
+	
+	
+	
+	
+	
+	{
+		"name": "attitude_group_against_group",
+		"attitude":"hostile",
+		"tag": "valteam",
+		"attitudegroup":"valentinos",
+		"attitudegrouptarget":"6thStreet",
+		"target":"sixteam"
+		
+	},
+	{
+		"name": "attitude_group_against_group",
+		"attitude":"hostile",
+		"tag": "sixteam",
+		"attitudegroup":"6thStreet",
+		"attitudegrouptarget":"valentinos",
+		"target":"valteam"
+		
+	},
+	
+	{	
+		"name":"wait_for_trigger",
+		"trigger": 
+		{
+			"name": "testFor",
+			"triggers": [
+				{
+					"name": "killed_group",
+					"tag": "valteam"
+				},
+				{
+					"name": "killed_group",
+					"tag": "sixteam"
+				}
+			],
+			"logic": "or",
+			"helper": "This trigger will be triggered when all of the trigger are triggered by the logic you choose."
+		}
+		
+	},
+	{
+		"name": "if",
+		"trigger": {
+			"name": "killed_group",
+			"tag": "valteam"
+		},
+		"if_action": [{
+			"name": "gang_affinity",
+			"score": 0.5,
+			"value": "faction_sixthstreet"
+			}],	
+		"else_action": [
+			{
+				"name": "gang_affinity",
+				"score": 0.5,
+				"value": "faction_valentinos"
+			}
+		]		},
+		{
+			"name": "despawn_group",
+			"tag": "sixteam"
+		},
+		{
+			"name": "despawn_group",
+			"tag": "valteam"
+		},
+		{
+			"name": "wait_second",
+			"value": 1
+		},
+		{
+			"name": "remove_group",
+			"tag": "sixteam"
+		},
+		{
+			"name": "remove_group",
+			"tag": "valteam"
+		}
+	]
+}

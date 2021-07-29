@@ -1,0 +1,11 @@
+{
+
+	"Name":"Scavenger",
+
+	"Tag": "faction_scavenger",
+	"AttitudeGroup":["scavenger"],
+	"Rivals":["faction_maelstrom"],
+	"SpawnableNPC":["Character.scavenger_grunt2_ranged2_copperhead_ma","Character.scavenger_grunt2_melee2_pipewrench_wa"],
+	"SpawnableVehicule":["Vehicle.ma_cct_dtn_03_scavenger_van"],
+	"DistrictTag":"district_downtown"
+}

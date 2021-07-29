@@ -1,0 +1,55 @@
+{
+	"name": "Antique shop",
+	"tag": "antiqueshop",
+	"posX": -1163,
+	"posY": 1765,
+	"posZ": 23,
+	"range":5,
+	"EnterX": 0,
+	"EnterY": 0,
+	"EnterZ": 0,
+	"ExitX": 0,
+	"ExitY": 0,
+	"ExitZ": 0,
+	"isbuyable": true,
+	"price":5000000,
+	"isrentable": true,
+	"rent":500,
+	"type": 4,
+	"coef": 5,
+	"rooms": [
+		{
+			"posX": -1163,
+			"posY": 1765,
+			"posZ": 23,
+			"name": "Main Room",
+			"range":4,
+			"tag": "antiqueshopmain",
+			"type": [
+				2
+			],
+			"trigger": {
+				"always_enable": {
+					"name": "auto"
+				}
+			},
+			"requirement": [
+				[
+					"always_enable"
+				]
+			],
+			"action": []
+		}
+	],
+	"trigger": {
+		"always_enable": {
+			"name": "auto"
+		}
+	},
+	"requirement": [
+		[
+			"always_enable"
+		]
+	],
+	"action": []
+}

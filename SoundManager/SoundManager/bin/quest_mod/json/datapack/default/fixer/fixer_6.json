@@ -1,0 +1,19 @@
+{
+
+	"Name":"Dino Dinovic",
+	"LOC_X":-1967,
+	"LOC_Y":378,
+	"LOC_Z":0,
+	"Faction":"faction_scavenger",
+	"Tag": "fixer_dino",
+	"exist":true,
+	"npcexist":true,
+	"NPCId":7392,
+	"trigger":{
+		"always_enable":{
+			"name":"auto"
+		}
+	},
+	"requirement":[["always_enable"]],
+	"action":[]
+}

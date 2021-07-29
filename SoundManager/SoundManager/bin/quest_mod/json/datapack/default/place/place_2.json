@@ -1,0 +1,100 @@
+{
+	"name": "Lizzie Bar",
+	"tag": "lizziebar",
+	"posX": -1172,
+	"posY": 1570,
+	"posZ": 23,
+	"range":20,
+	"EnterX": 0,
+	"EnterY": 0,
+	"EnterZ": 0,
+	"ExitX": 0,
+	"ExitY": 0,
+	"ExitZ": 0,
+	"isbuyable": true,
+	"price":5000000,
+	"isrentable": true,
+	"rent":50,
+	"type": 2,
+	"coef": 5,
+	
+	"rooms": [
+	{
+			"posX": -1173,
+			"posY": 1571,
+			"posZ": 22,
+			"name": "Bar",
+			"range":5,
+			"tag": "lizziebarbar",
+			"type": [
+				0,1
+			],
+			"trigger": {
+				"always_enable": {
+					"name": "auto"
+				}
+			},
+			"requirement": [
+				[
+					"always_enable"
+				]
+			],
+			"action": []
+		},
+		{
+			"posX": -1180,
+			"posY": 1561,
+			"posZ": 22,
+			"name": "Dancing pool",
+			"range":5,
+			"tag": "lizziedancingpool",
+			"type": [
+				2
+			],
+			"trigger": {
+				"always_enable": {
+					"name": "auto"
+				}
+			},
+			"requirement": [
+				[
+					"always_enable"
+				]
+			],
+			"action": []
+		},
+		{
+			"posX": -1167,
+			"posY": 1576,
+			"posZ": 18,
+			"name": "Studio",
+			"range":4,
+			"tag": "lizziestudio",
+			"type": [
+				2
+			],
+			"trigger": {
+				"always_enable": {
+					"name": "auto"
+				}
+			},
+			"requirement": [
+				[
+					"always_enable"
+				]
+			],
+			"action": []
+		}
+	],
+	"trigger": {
+		"always_enable": {
+			"name": "auto"
+		}
+	},
+	"requirement": [
+		[
+			"always_enable"
+		]
+	],
+	"action": []
+}
