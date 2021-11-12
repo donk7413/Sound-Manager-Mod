@@ -321,6 +321,7 @@ namespace SoundManager
                                     if (outputDevice.PlaybackState == PlaybackState.Stopped)
                                     {
                                         isPlaying = false;
+
                                     }
                                 }
 
